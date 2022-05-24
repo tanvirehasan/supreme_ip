@@ -173,7 +173,7 @@
  <main class="col-md-10 ms-sm-auto col-lg-10  px-md-0 " >
     <div class="header_img bg-dark ">
         <div class="row mx-0 m-0 p-0">
-            <div class="col-9  m-0 p-0" style="background-image: url('assets/brand/cat2.webp'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+            <div class="col-9  m-0 p-0" style="background-image: url('assets/mediacenter/<?=settings('default_img')?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
                 <h1 class="text-white h2"><?=postcate('category_name',"$postdata->cat_title")?></h1> 
               <div class="overlay" style="background:<?=settings('Overlay_color')?>; opacity: 0.7;"></div>
             </div>

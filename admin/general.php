@@ -343,7 +343,7 @@ $row = $data->fetch_object();
          </div>
 
 
-        <div class="col-md-6 page" >
+        <div class="col-md-4 page" >
             <div class="card p-3">
                 <form method="POST" action="" enctype="multipart/form-data">
                     <label for="categoryname" class="h5 w-100" style="font-weight:700;">Section Title Design </label>
@@ -382,18 +382,13 @@ $row = $data->fetch_object();
                             </td>
                         </tr>
                     </table>
-                    <label for="" class="form-label mt-3">Section BG color</label>
-                    <div style='height:50px;width:100%; border:none; padding:0; background:<?=Section_Design('background_color');?>'></div>
-                    <select name="background_color" id="" class="form-control">
-                        <option value="<?=Section_Design('background_color');?>" >Select</option>
-                        <?php select_color(); ?>
-                    </select>
+
                     <div class=" m-0 my-3"><button type="submit" name="section_updated" class="btn btn-primary">Update</button></div> 
                 </form> 
             </div> 
         </div>
 
-            <div class="col-md-6 page" >
+            <div class="col-md-4 page" >
                 <div class="card p-3">
                     <form method="POST" action="" enctype="multipart/form-data">
                         <label for="categoryname" class="h5 w-100" style="font-weight:700;">Heading Text</label>
@@ -429,6 +424,10 @@ $row = $data->fetch_object();
                                     <td>Text Color:
                                         <input type="color" name="page_header_font_color" value="<?=settings('page_header_font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
                                     </td>
+
+                                    <td>Icon Color:
+                                        <input type="color" name="page_header_icon_color" value="<?=settings('page_header_icon_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+                                    </td>
                                 </tr>
                             </table>
                             <div class=" m-0 my-3"><button type="submit" name="pageheader_update" class="btn btn-primary">Update</button></div> 
@@ -436,7 +435,52 @@ $row = $data->fetch_object();
                 </div> 
             </div>
 
+            <div class="col-md-4 page" >
+                <div class="card p-3">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        <label for="categoryname" class="h5 w-100" style="font-weight:700;">Your Lawyer is here</label>
+                             <input type="text" class="form-control mb-3" value="<?=settings('Your_Lawyer_text');?>" name="Your_Lawyer_text" placeholder="Your_Lawyer_text">
+                            <table class="mb-3" style="width: 100%;">
+                            
+                                <tr>
+                                    <td>font size:</td>
+                                    <td><input type="text" name="Your_Lawyer_font_size" class="form-control" min="1" max="100" value="<?=settings('Your_Lawyer_font_size');?>" id="font_size_submenu"></td>
 
+                                    <td  style="font-family:<?=settings('Your_Lawyer_font_famaily');?>;">Font:</td>
+                                    <td>
+                                        <select name="Your_Lawyer_font_famaily" class="form-control">
+                                            <option value="<?=settings('Your_Lawyer_font_famaily');?>"><?=settings('Your_Lawyer_font_famaily');?></option>
+                                            <?=font_select()?>
+                                        </select>
+                                    </td>
+                                    <td> | </td>
+                                    <td  style="text-transform:<?=settings('Your_Lawyer_font_lettercash');?>;">Letter case:</td>
+                                    <td>
+                                        <select name="Your_Lawyer_font_lettercash" class="form-control" >
+                                            <option value="<?=settings('Your_Lawyer_font_lettercash');?>">Select</option>
+                                            <option value="uppercase">uppercase</option>
+                                            <option value="lowercase">lowercase</option>
+                                            <option value="capitalize">capitalize</option>
+                                            
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>                   
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>Text Color:
+                                        <input type="color" name="Your_Lawyer_font_color" value="<?=settings('Your_Lawyer_font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+                                    </td>
+
+                                    <td>BG Color:
+                                        <input type="color" name="Your_Lawyer_bg_color" value="<?=settings('Your_Lawyer_bg_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class=" m-0 my-3"><button type="submit" name="Your_Lawyer_update" class="btn btn-primary">Update</button></div> 
+                    </form> 
+                </div> 
+            </div>
 
 
 

@@ -13,14 +13,14 @@
  <main class="col-md-9 ms-sm-auto col-lg-10  px-md-0" >
     <div class="header_img bg-dark ">
         <div class="row mx-0 m-0 p-0">
-            <div class="col-9  m-0 p-0"style="background-image: url('assets/brand/cat2.webp'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+            <div class="col-9  m-0 p-0"style="background-image: url('assets/mediacenter/<?=settings('default_img')?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
                 <h1 class="text-white h2"><?php if (isset($_GET['category'])) {echo $_GET['category'];}elseif (isset($_GET['sub_category'])) {echo $_GET['sub_category']; }else{echo 'All Post';}?>
                 <div class="overlay" style="background:<?=settings('Overlay_color')?>; opacity: 0.7;"></div>
             </h1>                
             </div>
             <div class="col-3 m-0 p-0 position-relative">
                 <div class="d-flex flex-column">
-                    <img src="assets/brand/cat3.jpg"style="height:200px;">    
+                    <img src="assets/mediacenter/<?=settings('default_img2')?>"style="height:200px;">    
                 </div>
                 <div class="overlay2" style="background:<?=settings('Overlay_color2')?>; opacity: 0.5;"></div>
     
@@ -68,7 +68,7 @@
  	<!-- detail content -->
  	<div class="row mx-0 p-0 m-0" style="min-height: 800px; background:<?=settings('default_theam_color')?>">
  		 <!--short sidebar -->
- 		<div class="col-2 mt-2  pt-1 p-3 h-50  side-menu ">
+ 		<div class="col-2 mt-4  pt-1 p-3 h-50  side-menu ">
             <ul class="nav flex-column main_header">   
                 <li class="nav-item">
                     <a class="nav-link nav_menu <?php if ($baseurl=='post.php') { echo "active_menu";}?>" href="post.php">
@@ -89,7 +89,7 @@
  		</div>
 
         <!------------------- All post -------------------->
-        <div class="col-12 col-md-8 col-lg-8 m-0 p-3 bg-white">
+        <div class="col-12 col-md-8 col-lg-8 m-0 pt-4 p-3 bg-white">
             <div class="cat_content">
             <!-- all post  -->
             <h5 class="section_title" ><i class='fas fa-file-alt'></i> Recent post: 
@@ -172,7 +172,7 @@
                    
 
     <!-- Category Post  -->
-    <div class="col-md-2 m-0 p-0 pt-0 bg-white">                                    
+    <div class="col-md-2 m-0 p-0 pt-4 bg-white">                                    
         <div class="sub-cat lawyer">
             <h6 class="m-0 section_title"><i class="far fa-file-alt"></i> Category Post</h6>
             <hr class="p-0 mt-2 " style="border-bottom:3x solid #979797;  width: 100%;" >

@@ -22,16 +22,13 @@ if (isset($_GET['page'])) {
  <main class="col-md-10 ms-sm-auto col-lg-10  m-0 p-0">
  	<div class="header_img bg-dark">
  		<div class="row mx-0 m-0 p-0">
- 			<div class="col-9  m-0 p-0" style="background-image: url('assets/mediacenter/<?php
-             
+ 			<div class="col-9  m-0 p-0" style="background-image: url('assets/mediacenter/<?php             
              if ($pageinfo->bgimag_off_on==1) {
                 if ($pageinfo->global_color==1) {
                     echo settings('default_img');
                 }else{echo $pageinfo->header_bg_img;
                 }              
-             }else{echo '';}
-             
-             
+             }else{echo '';}            
              ?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
  				<h1 class="text-white h2 pe-5"><?=$page->page_title?>
  				<div class="overlay" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('Overlay_color'):  $pageinfo->header_overlay_color;?>; opacity: 0.7;"></div>
@@ -54,14 +51,14 @@ if (isset($_GET['page'])) {
  				<div class="overlay2" style="background:<?=settings('Overlay_color2')?>; opacity: 0.5;"></div>
 
                 <!-- breadcrumb -->
-                    <nav aria-label="" class="breadcrumb_menu">
+                    <nav aria-label="" class="breadcrumb_menu header_icon">
                         <ol class="nav" style="cursor: pointer;">
-                            <li class="nav-link p-1 "><a href="https://www.facebook.com/sharer/sharer.php?u=<?=$sharelink?>"><i class="fab fa-facebook-square fs-5 text-white"></i></a> </li>
-                            <li class="nav-link p-1 "><a href="https://twitter.com/intent/tweet?url=<?=$sharelink?>"><i class="fab fa-twitter-square fs-5 text-white"></i></a></li>
-                            <li class="nav-link p-1 "><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=$sharelink?>"><i class="fab fa-linkedin fs-5 text-white"></i></a></li>
-                            <li class="nav-link p-1 "><a href="https://api.whatsapp.com/send?text=<?=$sharelink?>"><i class="fab fa-whatsapp-square fs-5 text-white"></i></a></li>
-                            <li class="nav-link p-1 "><a href="mailto:info@example.com?&subject=&cc=&bcc=&body=<?=$sharelink?>"><i class="fas fa-envelope fs-5 text-white "></i></a></li>
-                            <li class="nav-link p-1 "><a href="print.php?id=<?= $pageinfo->page_id?>" target="null" > <i class="fas fa-print text-white fs-5"></i> </a> </li>
+                            <li class="nav-link p-1 "><a href="https://www.facebook.com/sharer/sharer.php?u=<?=$sharelink?>"><i class="fab fa-facebook-square fs-5 "></i></a> </li>
+                            <li class="nav-link p-1 "><a href="https://twitter.com/intent/tweet?url=<?=$sharelink?>"><i class="fab fa-twitter-square fs-5 "></i></a></li>
+                            <li class="nav-link p-1 "><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=$sharelink?>"><i class="fab fa-linkedin fs-5 "></i></a></li>
+                            <li class="nav-link p-1 "><a href="https://api.whatsapp.com/send?text=<?=$sharelink?>"><i class="fab fa-whatsapp-square fs-5 "></i></a></li>
+                            <li class="nav-link p-1 "><a href="mailto:info@example.com?&subject=&cc=&bcc=&body=<?=$sharelink?>"><i class="fas fa-envelope fs-5 "></i></a></li>
+                            <li class="nav-link p-1 "><a href="print.php?id=<?= $pageinfo->page_id?>" target="null" > <i class="fas fa-print  fs-5"></i> </a> </li>
                         </ol>                     
                     </nav>                   
  			</div>
@@ -96,7 +93,7 @@ if (isset($_GET['page'])) {
  	<!-- detail content --> 
  	<div class="row mx-0" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('default_theam_color'):  $pageinfo->bg_color;?>;">
  		 <!--short sidebar -->
- 		<div class="col-md-3 col-lg-2 pt-3 p-3 m-0 h-100 side-menu">
+ 		<div class="col-md-3 col-lg-2 pt-4 p-3 m-0 h-100 side-menu">
             <ul class="nav flex-column main_header">
                 <li class="nav-item">                
                   <a class="nav-link nav_menu <?php if ($baseurl=='page.php?page='.$pageurl) { echo "active_menu";} ?>
@@ -118,7 +115,7 @@ if (isset($_GET['page'])) {
             </ul>	
  		</div>
 
-        <div class="col-12 col-md-9 col-lg-8 <?=($pageinfo->Section_gap_off_on==0) ? "bg-white" : '' ;?>">                 
+        <div class="col-12 col-md-9 col-lg-8 pb-5  <?=($pageinfo->Section_gap_off_on==0) ? "bg-white" : '' ;?>">                 
             <nav class="mb-3 d-md-none d-lg-none ">
                 <ol class="nav" style="cursor: pointer;">
                     <li class="nav-link p-2 "><a href="https://www.facebook.com/sharer/sharer.php?u=<?=$sharelink?>"><i class="fab fa-facebook-square fs-3 text-muted"></i></a> </li>
@@ -301,8 +298,8 @@ if (isset($_GET['page'])) {
                         $teag_data = SelectData('our_team', "WHERE team_id='$pageinfo->contact_parson'");
                         $contentinfo = $teag_data->fetch_object();?>      
 
-                        <h6 class="row section_title m-0" id="ylhbtn" style="background:<?php echo $pageinfo->contact_parson_color;?>; color:<?php echo $pageinfo->contact_parson_text_color;?>">
-                            <div class="col-11 p-0"><i class="fas fa-user-graduate pe-2"></i><?=$pageinfo->contact_parson_titel?></div>
+                        <h6 class="row section_title m-0" id="ylhbtn">
+                            <div class="col-11 p-0"><i class="fas fa-user-graduate pe-2"></i><?=settings('Your_Lawyer_text');?></div>
                             <div class="col-1 p-0 text-end"><i class="fal fa-angle-down"></i></div> </h6> 
 
                                 <div class="team-card" id="ylh" >    

@@ -275,15 +275,13 @@ if (isset($_POST['section_updated'])) {
   $text_bg_color      =$_POST["text_bg_color"];
  
 
-
      $sql=" UPDATE section_design SET     
       font_size='$font_size',
       font_color='$font_color',
       font_family='$font_family',
       background_color='$background_color',
       text_bg_color='$text_bg_color'
-      
-      
+         
        ";
      if(mysqli_query($conn, $sql)){
        $msg = "favicon Update Successfully !";
@@ -302,6 +300,7 @@ $page_header_font_size=$_POST["page_header_font_size"];
 $page_header_font_color=$_POST["page_header_font_color"];
 $page_header_font_famaily=htmlspecialchars($_POST["page_header_font_famaily"]);
 $page_header_font_lettercash=$_POST["page_header_font_lettercash"];
+$page_header_icon_color=$_POST["page_header_icon_color"];
 
     // Update query
      $sql=" UPDATE settings SET 
@@ -309,7 +308,8 @@ $page_header_font_lettercash=$_POST["page_header_font_lettercash"];
       page_header_font_size='$page_header_font_size', 
       page_header_font_color='$page_header_font_color',
       page_header_font_famaily='$page_header_font_famaily', 
-      page_header_font_lettercash='$page_header_font_lettercash' 
+      page_header_font_lettercash='$page_header_font_lettercash', 
+      page_header_icon_color='$page_header_icon_color' 
        
      ";
      if(mysqli_query($conn, $sql)){
@@ -319,9 +319,38 @@ $page_header_font_lettercash=$_POST["page_header_font_lettercash"];
        echo "error";
      }
 
-
 }
 
+
+//Your_Lawyer_update
+if (isset($_POST['Your_Lawyer_update'])) {
+
+$Your_Lawyer_text=$_POST["Your_Lawyer_text"];
+$Your_Lawyer_font_size=$_POST["Your_Lawyer_font_size"];
+$Your_Lawyer_font_famaily=htmlspecialchars($_POST["Your_Lawyer_font_famaily"]);
+$Your_Lawyer_font_lettercash=$_POST["Your_Lawyer_font_lettercash"];
+$Your_Lawyer_font_color=$_POST["Your_Lawyer_font_color"];
+$Your_Lawyer_bg_color=$_POST["Your_Lawyer_bg_color"];
+
+    // Update query
+     $sql=" UPDATE settings SET 
+     
+      Your_Lawyer_text='$Your_Lawyer_text', 
+      Your_Lawyer_font_size='$Your_Lawyer_font_size',
+      Your_Lawyer_font_famaily='$Your_Lawyer_font_famaily', 
+      Your_Lawyer_font_lettercash='$Your_Lawyer_font_lettercash', 
+      Your_Lawyer_font_color='$Your_Lawyer_font_color',
+      Your_Lawyer_bg_color='$Your_Lawyer_bg_color'
+       
+     ";
+     if(mysqli_query($conn, $sql)){
+       $msg = "Logo Update Successfully !";
+       $bg = "alert alert-success";
+     }else{
+       echo "error";
+     }
+
+}
 
 
 

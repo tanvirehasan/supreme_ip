@@ -102,6 +102,22 @@
   text-transform:<?=settings('page_header_font_lettercash')?>!important;  
 }
 
+.header_img i{
+  color:<?=settings('page_header_icon_color')?>!important;
+}
+
+
+#ylhbtn{
+
+  font-size:<?=settings('Your_Lawyer_font_size')?>px !important;
+  color:<?=settings('Your_Lawyer_font_color')?>!important;
+  background:<?=settings('Your_Lawyer_bg_color')?>!important;
+  font-family:<?=html_entity_decode(settings('Your_Lawyer_font_famaily'))?>!important;
+  text-transform:<?=settings('page_header_font_lettercash')?>!important; 
+
+}
+
+
 
 
 
