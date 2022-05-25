@@ -422,11 +422,23 @@ $row = $data->fetch_object();
                             <table style="width: 100%;">
                                 <tr>
                                     <td>Text Color:
-                                        <input type="color" name="page_header_font_color" value="<?=settings('page_header_font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+                                        <input type="color" value="<?=settings('page_header_font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+                                        <select name="page_header_font_color" class="form-control">
+                                            <option value="<?=settings('page_header_font_color');?>" >select</option>
+                                            <?php select_color(); ?>
+                                        </select>
+
                                     </td>
 
                                     <td>Icon Color:
-                                        <input type="color" name="page_header_icon_color" value="<?=settings('page_header_icon_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+                                        <input type="color"  value="<?=settings('page_header_icon_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+
+                                        <select name="page_header_icon_color" class="form-control">
+                                            <option value="<?=settings('page_header_icon_color');?>" >select</option>
+                                            <?php select_color(); ?>
+                                        </select>
+
+
                                     </td>
                                 </tr>
                             </table>
@@ -469,11 +481,20 @@ $row = $data->fetch_object();
                             <table style="width: 100%;">
                                 <tr>
                                     <td>Text Color:
-                                        <input type="color" name="Your_Lawyer_font_color" value="<?=settings('Your_Lawyer_font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+                                        <input type="color" value="<?=settings('Your_Lawyer_font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+                                        <select name="Your_Lawyer_font_color" class="form-control">
+                                            <option value="<?=settings('Your_Lawyer_font_color');?>" >select</option>
+                                            <?php select_color(); ?>
+                                        </select>
                                     </td>
 
                                     <td>BG Color:
-                                        <input type="color" name="Your_Lawyer_bg_color" value="<?=settings('Your_Lawyer_bg_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+                                        <input type="color"  value="<?=settings('Your_Lawyer_bg_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
+
+                                        <select name="Your_Lawyer_bg_color" class="form-control">
+                                            <option value="<?=settings('Your_Lawyer_bg_color');?>" >select</option>
+                                            <?php select_color(); ?>
+                                        </select>
                                     </td>
                                 </tr>
                             </table>

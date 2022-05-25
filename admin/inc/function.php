@@ -187,6 +187,36 @@ function Section_Design($data){
     return $row[$data];
 }
 
+function file_management($data){
+    $row = mysqli_fetch_array(SelectData('file_management',"where file_url='$data'"));
+     echo Reconect($row['file_name']);   
+}
+
+
+
+
+function compressImage($source, $destination, $quality) { 
+
+    $imgInfo = getimagesize($source); 
+    $mime = $imgInfo['mime']; 
+     
+    switch($mime){ 
+        case 'image/jpeg': 
+            $image = imagecreatefromjpeg($source); 
+            break; 
+        case 'image/png': 
+            $image = imagecreatefrompng($source); 
+            break; 
+        case 'image/gif': 
+            $image = imagecreatefromgif($source); 
+            break; 
+        default: 
+            $image = imagecreatefromjpeg($source); 
+    } 
+     
+    imagejpeg($image, $destination, $quality);    
+    return $destination; 
+} 
 
 
 

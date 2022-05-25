@@ -1,44 +1,30 @@
-<?php if (isset($_GET['category'])) {echo $_GET['category'];}elseif (isset($_GET['sub_category'])) {echo $_GET['sub_category']; }else{echo 'All Post';}?>
+<form action="" method="post"   enctype="multipart/form-data">
+    <input type="file" name="image"  >
+    <input type="submit" name="submit" >
+</form>
 
 
 
-
-        <div class="m-0 p-0 text-center" id="ylh" style="border:none;">
-            <img src="assets/mediacenter/team/<?=$contentinfo->Profile_pic?>" width="100%">
-            <div class="card card-body" style="background-color:<?php echo $pageinfo->contact_parson_color;?>;">
-                <b class=" text-center" style="font-size:13px;"><?=$contentinfo->Name?></b>
-                <p class=" text-center" style="font-size:11px;"><?=$contentinfo->Designation?></p>
-                <p class=" text-center  p-0 m-0" style="font-size:12px;"><?=$contentinfo->Phone_No?></p>
-                <p class=" text-center  p-0 m-0" style="font-size:12px;"><?=$contentinfo->Email?></p>
-            </div>
-        </div>
+<?php
 
 
 
 
 
-<script>
-    $(document).ready(function(){
+// File upload path 
+$uploadPath = "uploads/";  
 
-        $(".menubtn").click(function(){
-            $(".menu").toggle(200);
-        });
 
-        $(".teambtn").click(function(){
-            $(".team").toggle(200);
-        });
+if(isset($_POST["submit"])){ 
+    if(!empty($_FILES["image"]["name"])) { 
 
-        $(".pagebtn").click(function(){
-            $(".page").toggle(200);
-        });
+        $fileName = basename($_FILES["image"]["name"]); 
+        $imageTemp = $_FILES["image"]["tmp_name"];
+        $imageUploadPath = $uploadPath . $fileName; 
+        $compressedImage = compressImage($imageTemp, $imageUploadPath, 40); 
+         
+    }    
+} 
+ 
 
-        $(".settingbtn").click(function(){
-            $(".setting").toggle(200);
-        });
-        
-        $(".globalbtn").click(function(){
-            $(".global").toggle(200);
-        });
-
-    });
-</script>
+?>

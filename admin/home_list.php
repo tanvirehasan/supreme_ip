@@ -16,8 +16,14 @@
 
             $target_dir = "../assets/mediacenter/";
             $image    = $_FILES["image"]["name"];            
-            $target_file = $target_dir . basename($_FILES["image"]["name"]);
-            move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
+ 
+                $fileName = basename($_FILES["image"]["name"]); 
+                $imageTemp = $_FILES["image"]["tmp_name"];
+                $imageUploadPath = $target_dir . $fileName; 
+                $compressedImage = compressImage($imageTemp, $imageUploadPath, 40);
+
+
 
         }else{ $image    = $_POST['imagevalue'];}
 
