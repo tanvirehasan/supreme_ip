@@ -67,21 +67,18 @@ if (isset($_GET['page'])) {
 
 
      <!-- mobile side menu -->
-     <div class="p-1 d-md-none d-sm-block my-3">        
-         <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-              <div class="container-fluid">               
-                <button class="navbar-toggler bg-danger text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-bars fs-4 pe-3"></i><?=$page->page_title?></button>
-                <div class="collapse navbar-collapse " id="navbarNav">
-                      <ul class="navbar-nav align-items-end">
-                            <li class="nav-item">
-                              <a class="nav-link  text-white"  href="page.php?page=<?=$pageurl?>"><?=$page->manu_title;?></a>
-                            </li>
+     <div class="d-md-none d-sm-block mb-3">        
+         <nav class="navbar navbar-expand-lg navbar-light" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('default_theam_color'):  $pageinfo->bg_color;?>;">
+              <div class="">               
+                <button class="navbar-toggler m-3 border-0" style="color:<?=sub_menu('font_color')?> !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-bars fs-4 pe-1 ps-3"></i> <?=$page->manu_title?></button>
+                <div class="collapse navbar-collapse p-3 px-4" id="navbarNav">
+                      <ul class="navbar-nav">
                         <?php 
                             $data = SelectData('pages',"WHERE page_parent_id='$pageid' ORDER BY main_menu ASC");
                             while($row = $data->fetch_object()){?> 
                             <li class="nav-item">
-                              <a class="nav-link  text-white"  href="page.php?page=<?=$pageurl?>&child=<?=$row->page_url;?>"><?=$row->manu_title;?></a>
+                              <a class="nav-link  text-white"  href="page.php?page=<?=$pageurl?>&child=<?=$row->page_url;?>"  style="color:<?=sub_menu('font_color')?> !important;"><?=$row->manu_title;?></a>
                             </li>
                             <?php }?>
                       </ul>
@@ -127,7 +124,7 @@ if (isset($_GET['page'])) {
             </nav>
 
                             
-        <div class="page_content p-4" ><?=html_entity_decode($pageinfo->page_content)?></div> 
+        <div class="page_content" ><?=html_entity_decode($pageinfo->page_content)?></div> 
         <?php 
         $price_data = SelectData('prices', "WHERE price_page_id={$pageinfo->page_id} ORDER BY serial_list ASC");
         if ($price_data->num_rows>0) {?>                      
@@ -247,6 +244,7 @@ if (isset($_GET['page'])) {
             <?php } ?>           
                     
 
+            <!-- team -->
             <?php 
                 $team_data = SelectData('page_team', "INNER JOIN our_team ON page_team.team_member_id=our_team.team_id WHERE page_id={$pageinfo->page_id} ORDER BY serial_list ASC ");
                 if ($team_data->num_rows>0) {?>

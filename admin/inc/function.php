@@ -121,14 +121,14 @@ function sub_catagory($subcat_col, $pid){
 //settings
 function settings($U_data){
     $row = mysqli_fetch_array(SelectData('settings',""));
-    echo $row[$U_data];
+    return $row[$U_data];
 }
 
 
 //header_menu
 function header_menu($U_data){
     $row = mysqli_fetch_array(SelectData('header_menu',""));
-    echo $row[$U_data];
+    return $row[$U_data];
 }
 
 //Sub_menu
@@ -149,6 +149,13 @@ function select_color(){
     while ($textcolor = $data->fetch_object()) {
     echo "<option value='$textcolor->color_code'>$textcolor->color_name</option>";                                 
     }
+}
+
+
+function color_name($code){                                   
+    $data = SelectData('color_settings',"where color_code='$code' ");
+    $colorname = $data->fetch_object();
+    return $colorname->color_name;
 }
 
 

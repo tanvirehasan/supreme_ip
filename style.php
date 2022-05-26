@@ -63,12 +63,24 @@
 }
 
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow: visible;
+  z-index: 100; /* Behind the navbar */
+  box-shadow: 0px 0px 10px <?=settings('shadow_color')?>;
+}
+
+
+
 
 <?php //Sub-menu ?>
 
 .side-menu a{ 
   font-size: <?=sub_menu('font_size')?>px;
-  color:<?=sub_menu('font_color')?>;
+  color:<?=sub_menu('font_color')?> !important;
   text-transform:<?=sub_menu('text_transform')?>;
   line-height:<?=sub_menu('line_height')?>; 
   cursor: pointer;
@@ -93,7 +105,19 @@
 }
 
 
+
+
+
+
 <?php // Page Header?>
+
+
+.header_img{
+  box-shadow: 0px 0px 10px <?=settings('shadow_color')?>;
+}
+
+
+
 
 .header_img h1{
   font-size:<?=settings('page_header_font_size')?>px !important;

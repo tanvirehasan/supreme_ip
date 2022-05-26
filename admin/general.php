@@ -54,21 +54,21 @@ $row = $data->fetch_object();
                                 <td>Text Color:
                                     <input type="color" value="<?=header_menu('font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
                                     <select name="font_color" class="form-control">
-                                        <option value="<?=header_menu('font_color');?>" >select</option>
+                                        <option value="<?php echo header_menu('font_color');?>" ><?=color_name(header_menu('font_color'))?></option>
                                         <?php select_color(); ?>
                                     </select>
                                 </td>
                                 <td>Hover Color:
                                     <input type="color" value="<?=header_menu('hover_color');?>" class="form-control" style='height: 50px; border:none;  padding:0' >
                                     <select name="hover_color" class="form-control">
-                                        <option value="<?=header_menu('hover_color');?>" >select</option>
+                                        <option value="<?=header_menu('hover_color');?>" ><?=color_name(header_menu('hover_color'))?></option>
                                         <?php select_color(); ?>
                                     </select>
                                 </td>
                                 <td>Active Color:
                                     <input type="color" value="<?=header_menu('active_color');?>" class="form-control" style='height: 50px; border:none;  padding:0'>
                                     <select name="active_color" class="form-control">
-                                        <option value="<?=header_menu('active_color');?>" >select</option>
+                                        <option value="<?=header_menu('active_color');?>" ><?=color_name(header_menu('active_color'))?></option>
                                         <?php select_color(); ?>
                                     </select>
                                 </td>
@@ -77,7 +77,7 @@ $row = $data->fetch_object();
                         <label for="" class="form-label mt-3">background color</label>
                         <div style='height:50px;width:100%; border:none; padding:0; background:<?=header_menu('background_color');?>'></div>
                         <select name="background_color" id="" class="form-control">
-                            <option value="<?=header_menu('background_color');?>" >Select</option>
+                            <option value="<?=header_menu('background_color');?>" ><?=color_name(header_menu('background_color'))?></option>
                             <?php select_color(); ?>
                         </select>
                         <div class=" m-0 my-3"><button type="submit" name="sidebarupdated" class="btn btn-primary">Update</button></div> 
@@ -127,21 +127,21 @@ $row = $data->fetch_object();
                                     <td>Text Color:
                                         <input type="color" value="<?=sub_menu('font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
                                         <select name="font_color" class="form-control">
-                                            <option value="<?=sub_menu('font_color');?>" >select</option>
+                                            <option value="<?=sub_menu('font_color');?>" ><?=color_name(sub_menu('font_color'))?></option>
                                             <?php select_color(); ?>
                                         </select>
                                     </td>
                                     <td>Hover Color:
                                         <input type="color" value="<?=sub_menu('hover_color');?>" class="form-control" style='height: 50px; border:none;  padding:0' >
                                         <select name="hover_color" class="form-control">
-                                            <option value="<?=sub_menu('hover_color');?>" >select</option>
+                                            <option value="<?=sub_menu('hover_color');?>" ><?=color_name(sub_menu('hover_color'))?></option>
                                             <?php select_color(); ?>
                                         </select>
                                     </td>
                                     <td>Active Color:
                                         <input type="color" value="<?=sub_menu('active_color');?>" class="form-control" style='height: 50px; border:none;  padding:0'>
                                         <select name="active_color" class="form-control">
-                                            <option value="<?=sub_menu('active_color');?>" >select</option>
+                                            <option value="<?=sub_menu('active_color');?>" ><?=color_name(sub_menu('active_color'))?></option>
                                             <?php select_color(); ?>
                                         </select>
                                     </td>
@@ -199,28 +199,28 @@ $row = $data->fetch_object();
                                 <td>Name Color:
                                     <input type="color" value="<?=Team_Design('name_font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
                                     <select name="name_font_color" class="form-control">
-                                        <option value="<?=Team_Design('name_font_color');?>" >select</option>
+                                        <option value="<?=Team_Design('name_font_color');?>" ><?=color_name(Team_Design('name_font_color'))?></option>
                                         <?php select_color(); ?>
                                     </select>
                                 </td>
                                 <td>D-color:
                                     <input type="color" value="<?=Team_Design('designation_font_color');?>" class="form-control" style='height: 50px; border:none;  padding:0' >
                                     <select name="designation_font_color" class="form-control">
-                                        <option value="<?=Team_Design('designation_font_color');?>" >select</option>
+                                        <option value="<?=Team_Design('designation_font_color');?>" ><?=color_name(Team_Design('designation_font_color'))?></option>
                                         <?php select_color(); ?>
                                     </select>
                                 </td>
                                 <td>Icon:
                                     <input type="color" value="<?=Team_Design('icon_color');?>" class="form-control" style='height: 50px; border:none;  padding:0'>
                                     <select name="icon_color" class="form-control">
-                                        <option value="<?=Team_Design('icon_color');?>" >select</option>
+                                        <option value="<?=Team_Design('icon_color');?>" ><?=color_name(Team_Design('icon_color'))?></option>
                                         <?php select_color(); ?>
                                     </select>
                                 </td>
                                 <td>Icon BG:
                                     <input type="color" value="<?=Team_Design('icon_bg_color');?>" class="form-control" style='height: 50px; border:none;  padding:0'>
                                     <select name="icon_bg_color" class="form-control">
-                                        <option value="<?=Team_Design('icon_bg_color');?>" >select</option>
+                                        <option value="<?=Team_Design('icon_bg_color');?>" ><?=color_name(Team_Design('icon_bg_color'))?></option>
                                         <?php select_color(); ?>
                                     </select>
                                 </td>
@@ -228,7 +228,7 @@ $row = $data->fetch_object();
                                 <td>hover:
                                     <input type="color" value="<?=Team_Design('hover_color');?>" class="form-control" style='height: 50px; border:none;  padding:0'>
                                     <select name="hover_color" class="form-control">
-                                        <option value="<?=Team_Design('hover_color');?>" >select</option>
+                                        <option value="<?=Team_Design('hover_color');?>" ><?=color_name(Team_Design('hover_color'))?></option>
                                         <?php select_color(); ?>
                                     </select>
                                 </td>
@@ -240,7 +240,7 @@ $row = $data->fetch_object();
                         <label for="" class="form-label mt-3">background color</label>
                         <div style='height:50px;width:100%; border:none; padding:0; background:<?=Team_Design('background_color');?>'></div>
                         <select name="background_color" id="" class="form-control">
-                            <option value="<?=Team_Design('background_color');?>" >Select</option>
+                            <option value="<?=Team_Design('background_color');?>" ><?=color_name(Team_Design('background_color'))?></option>
                             <?php select_color(); ?>
                         </select>
                         <div class=" m-0 my-3"><button type="submit" name="team_design_update" class="btn btn-primary">Update</button></div> 
@@ -249,8 +249,6 @@ $row = $data->fetch_object();
             </div>
            
 </div>
-
-
 
 
 
@@ -297,7 +295,7 @@ $row = $data->fetch_object();
                         <label class=" form-label" style="font-weight:700;">Overlay color left</label> 
                         <p style='height:100px;width:100%; border:none; background:<?=$row->Overlay_color?>'></p>
                         <select name="Overlay_color" id="" class="form-control">
-                            <option value="<?=$row->Overlay_color?>">Select</option>
+                            <option value="<?=$row->Overlay_color?>"><?=color_name($row->Overlay_color)?></option>
                         <?php 
                                 $data = SelectData('color_settings','');
                                 while ($textcolor = $data->fetch_object()) {?>
@@ -310,11 +308,11 @@ $row = $data->fetch_object();
                         <label class=" form-label" style="font-weight:700;">Overlay color right</label> 
                         <p style='height:100px;width:100%; border:none; background:<?=$row->Overlay_color2?>'></p>
                         <select name="Overlay_color2" id="" class="form-control">
-                            <option value="<?=$row->Overlay_color2?>">Select</option>
+                            <option value="<?=$row->Overlay_color2?>"><?=color_name($row->Overlay_color2)?></option>
                         <?php 
                                 $data = SelectData('color_settings','');
                                 while ($textcolor = $data->fetch_object()) {?>
-                                <option value="<?=$textcolor->color_code?>" ><?=$textcolor->color_name?></option>
+                                <option value="<?=$textcolor->color_code?>" ><?=$textcolor->color_code?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -325,7 +323,7 @@ $row = $data->fetch_object();
                         <label class=" form-label " style="font-weight:700;">Page Background</label> 
                         <p style='height:100px;width:100%; border:none; background:<?=$row->default_theam_color?>'></p>
                         <select name="default_theam_color" id="" class="form-control">
-                            <option value="<?=$row->default_theam_color?>" >Select</option>
+                            <option value="<?=$row->default_theam_color?>" ><?=color_name($row->default_theam_color)?></option>
                         <?php 
                                 $data = SelectData('color_settings','');
                                 while ($textcolor = $data->fetch_object()) {?>
@@ -333,6 +331,20 @@ $row = $data->fetch_object();
                             <?php } ?>
                         </select>
                     </div>
+
+                    <div class="col-md-2">  
+                        <label class=" form-label " style="font-weight:700;">Shadow Color</label> 
+                        <p style='height:100px;width:100%; border:none; background:<?=$row->shadow_color?>'></p>
+                        <select name="shadow_color" id="" class="form-control">
+                            <option value="<?=$row->shadow_color?>"><?=color_name($row->shadow_color)?></option>
+                        <?php 
+                                $data = SelectData('color_settings','');
+                                while ($textcolor = $data->fetch_object()) {?>
+                                <option value="<?=$textcolor->color_code?>" ><?=$textcolor->color_name?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    
 
                     </div>
                     <div class=" m-0 my-3">
@@ -369,14 +381,14 @@ $row = $data->fetch_object();
                             <td>Text Color:
                                 <input type="color" value="<?=Section_Design('font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
                                 <select name="font_color" class="form-control">
-                                    <option value="<?=Section_Design('font_color');?>" >select</option>
+                                    <option value="<?=Section_Design('font_color');?>" ><?=color_name(Section_Design('font_color'))?></option>
                                     <?php select_color(); ?>
                                 </select>
                             </td>
                             <td>Text BG Color:
                                 <input type="color" value="<?=Section_Design('text_bg_color');?>" class="form-control" style='height: 50px; border:none;  padding:0' >
                                 <select name="text_bg_color" class="form-control">
-                                    <option value="<?=Section_Design('text_bg_color');?>" >select</option>
+                                    <option value="<?=Section_Design('text_bg_color');?>" ><?=color_name(Section_Design('text_bg_color'))?></option>
                                     <?php select_color(); ?>
                                 </select>
                             </td>
@@ -424,7 +436,7 @@ $row = $data->fetch_object();
                                     <td>Text Color:
                                         <input type="color" value="<?=settings('page_header_font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
                                         <select name="page_header_font_color" class="form-control">
-                                            <option value="<?=settings('page_header_font_color');?>" >select</option>
+                                            <option value="<?=settings('page_header_font_color');?>" ><?=color_name(settings('page_header_font_color'))?></option>
                                             <?php select_color(); ?>
                                         </select>
 
@@ -434,7 +446,7 @@ $row = $data->fetch_object();
                                         <input type="color"  value="<?=settings('page_header_icon_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
 
                                         <select name="page_header_icon_color" class="form-control">
-                                            <option value="<?=settings('page_header_icon_color');?>" >select</option>
+                                            <option value="<?=settings('page_header_icon_color');?>" ><?=color_name(settings('page_header_icon_color'))?></option>
                                             <?php select_color(); ?>
                                         </select>
 
@@ -483,7 +495,7 @@ $row = $data->fetch_object();
                                     <td>Text Color:
                                         <input type="color" value="<?=settings('Your_Lawyer_font_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
                                         <select name="Your_Lawyer_font_color" class="form-control">
-                                            <option value="<?=settings('Your_Lawyer_font_color');?>" >select</option>
+                                            <option value="<?=settings('Your_Lawyer_font_color');?>" ><?=color_name(settings('Your_Lawyer_font_color'))?></option>
                                             <?php select_color(); ?>
                                         </select>
                                     </td>
@@ -492,7 +504,7 @@ $row = $data->fetch_object();
                                         <input type="color"  value="<?=settings('Your_Lawyer_bg_color');?>" class="form-control" style='height: 50px; border:none; padding:0'>
 
                                         <select name="Your_Lawyer_bg_color" class="form-control">
-                                            <option value="<?=settings('Your_Lawyer_bg_color');?>" >select</option>
+                                            <option value="<?=settings('Your_Lawyer_bg_color');?>" ><?=color_name(settings('Your_Lawyer_bg_color'))?></option>
                                             <?php select_color(); ?>
                                         </select>
                                     </td>
@@ -621,12 +633,13 @@ $row = $data->fetch_object();
                     </table> 
 
                 <form method="POST" action="" enctype="multipart/form-data">                
-                <div id="add_slink" class="mt-3" style="display: none;">
-                    <input type="text" class="form-control"  name="icon" placeholder="Icon">
-                    <input type="text" class="form-control"  name="name" placeholder="Name"> 
-                    <input type="text" class="form-control"  name="social_url" placeholder="Url"> 
-                    <button type="submit" class="btn btn-primary mt-3" name="newadd">Submit </button>
-                </div>                
+                    <div id="add_slink" class="mt-3" style="display: none;">
+                        <input type="text" class="form-control"  name="icon" placeholder="Icon">
+                        <input type="text" class="form-control"  name="name" placeholder="Name"> 
+                        <input type="text" class="form-control"  name="social_url" placeholder="Url"> 
+                        <button type="submit" class="btn btn-primary mt-3" name="newadd">Submit </button>
+                    </div>   
+                </form>             
             </div> 
 
         </div>
@@ -693,7 +706,6 @@ $row = $data->fetch_object();
 
     </div><!-- row -->
 
-
 <div class="row">
         <div class="col-12 globalbtn"><h3 class="bg-white p-3 text-uppercase text-primary"><i class="fas fa-cog"></i> Global Color Setting</h3></div>
 
@@ -719,20 +731,20 @@ $row = $data->fetch_object();
                     </table> 
 
                 <form method="POST" action="" enctype="multipart/form-data">                
-                <div id="add_slink" class="mt-3" style="display: none;">
-                    <input type="text" class="form-control"  name="color_name" placeholder="Color Name"> 
-                    <input type="text" class="form-control"  name="color_code" placeholder="Color Code"> 
-                    <button type="submit" class="btn btn-primary mt-3" name="new_color_add">Submit </button>
-                </div>                
+                    <div id="add_slink" class="mt-3">
+                        <input type="text" class="form-control"  name="color_name" placeholder="Color Name"> 
+                        <input type="text" class="form-control"  name="color_code" placeholder="Color Code"> 
+                        <button type="submit" class="btn btn-primary mt-3" name="new_color_add">Submit </button>
+                    </div>     
+                </form>           
             </div> 
         </div>
-
 
 
         <div class="col-md-4 global">
             <!-- Font Color Settings -->
             <div class="card p-3">                             
-                    <label for="categoryname" class="h4 pt-2" style="font-weight:700;" id="show_form">Font Color Settings </label>
+                    <label for="categoryname" class="h4 pt-2" style="font-weight:700;">Font Color Settings </label>
                     <table style="width:100%">
                 <?php 
                     $data3 = SelectData('text_color_settings','');
@@ -754,31 +766,12 @@ $row = $data->fetch_object();
                             </select>
                             </td>
 
-                            <td>
-                                <select name="font_fmaily">
-                                    <option style="font-family:<?=$social->font_fmaily?>;" value="<?=$social->font_fmaily?>"><?=$social->font_fmaily?></option>
-                                    <option style="font-family:Georgia;" value="Georgia">Georgia</option>
-                                    <option style="font-family:Times New Roman;" value="Times New Roman">Times New Roman</option>
-                                    <option style="font-family:Arial;" value="Arial">Arial</option>
-                                    <option style="font-family:Helvetica;" value="Helvetica">Helvetica</option>
-                                    <option style="font-family:Arial Black;" value="Arial Black">Arial Black</option>
-                                    <option style="font-family:Impact;" value="Impact">Impact</option>
-                                    <option style="font-family:Lucida Sans Unicode;" value="Lucida Sans Unicode">Lucida Sans Unicode</option>
-                                    <option style="font-family:Tahoma;" value="Tahoma">Tahoma</option>
-                                    <option style="font-family:Verdana;" value="Verdana">Verdana</option>
-                                    <option style="font-family:Courier New;" value="Courier New">Courier New</option>
-                                    <option style="font-family:Lucida Console;" value="Lucida Console">Lucida Console</option>
-                                    <option style="font-family:serif;" value="serif">serif</option>
-                                    <option style="font-family:sans-serif;" value="sans-serif">sans-serif</option>
-                                    <option style="font-family:cursive;" value="cursive">cursive</option>
-                                    <option style="font-family:fantasy;" value="fantasy">fantasy</option>
-                                    <option style="font-family:monospace;" value="monospace">monospace</option>
-                                    <option style="font-family:Poppins;" value="Poppins">Poppins</option>
-                                    <option style="font-family:'Bebas Neue', cursive;" value="'Bebas Neue', cursive">Bebas Neue</option>
-                                    <option style="font-family:'Oswald', sans-serif;" value="'Oswald', sans-serif">Oswald</option>
+                            <td>                                
+                                <select name="font_fmaily">  
+                                    <option style="font-family:<?=$social->font_fmaily?>;" value="<?=$social->font_fmaily?>"><?=$social->font_fmaily?></option>                                  
+                                     <?php font_select(); ?>                                   
                                 </select>
                             </td>
-
 
                            <td><input type="color" class="form-control" value="<?=$social->color_code?>" style="width: 50px; height:50px; border:0"> </td>
                             <input type="hidden" name="tcid" value="<?=$social->tcid?>">
@@ -786,14 +779,7 @@ $row = $data->fetch_object();
                         </tr>
                     </form>                        
                 <?php } } ?>
-                    </table> 
-
-                <form method="POST" action="" enctype="multipart/form-data">                
-                <div id="add_slink" class="mt-3" style="display: none;">
-                    <input type="text" class="form-control"  name="color_name" placeholder="Color Name"> 
-                    <input type="text" class="form-control"  name="color_code" placeholder="Color Code"> 
-                    <button type="submit" class="btn btn-primary mt-3" name="new_color_add">Submit </button>
-                </div>                
+                    </table>                   
             </div> 
         </div>
 
@@ -802,7 +788,7 @@ $row = $data->fetch_object();
             <div class="col-md-4 global">
             <!-- Link Color Settings -->
             <div class="card p-3">                             
-                    <label for="categoryname" class="h4 pt-2" style="font-weight:700;" id="show_form">Link Color</label>
+                    <label for="categoryname" class="h4 pt-2" style="font-weight:700;">Link Color</label>
                     <table style="width:100%">
                 <?php 
                     $data3 = SelectData('text_color_settings','');
@@ -828,14 +814,7 @@ $row = $data->fetch_object();
                         </tr>
                     </form>                        
                 <?php } } ?>
-                    </table> 
-
-                <form method="POST" action="" enctype="multipart/form-data">                
-                <div id="add_slink" class="mt-3" style="display: none;">
-                    <input type="text" class="form-control"  name="color_name" placeholder="Color Name"> 
-                    <input type="text" class="form-control"  name="color_code" placeholder="Color Code"> 
-                    <button type="submit" class="btn btn-primary mt-3" name="new_color_add">Submit </button>
-                </div>                
+                    </table>                               
             </div> 
         </div>
 
@@ -847,13 +826,6 @@ $row = $data->fetch_object();
 </div>
 
 
-<script>
-$(document).ready(function(){
-    $("#show_form").click(function(){
-        $("#add_slink").toggle();
-    });
-});
-</script>
 
 
 <script>
@@ -883,10 +855,7 @@ $(document).ready(function(){
 </script>
 
 <style>
-
-.menu,.team, .page, .setting, .global{
-    display: none;    
-}
+.menu,.team, .page, .setting, .global{display: none;}
 
 </style>
 

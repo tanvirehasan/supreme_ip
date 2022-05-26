@@ -41,19 +41,19 @@
     </div>
 
      <!-- mobile side menu -->
-     <div class="p-1  d-md-none d-sm-block my-3">        
-         <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-              <div class="container-fluid">               
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-bars fs-4 text-white"></i>
+     <div class="d-md-none d-sm-block my-3 p-0">        
+         <nav class="navbar navbar-expand-lg navbar-light" style="background:<?php echo settings('default_theam_color')?>;">
+              <div class="">               
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-bars fs-4 "> </i> <?php if (isset($_GET['category'])) {echo $_GET['category'];}elseif (isset($_GET['sub_category'])) {echo $_GET['sub_category']; }else{echo "<b class=''>All Post</b>";}?>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav align-items-end">
+                      <ul class="navbar-nav p-3">
                         <?php 
                             $data = SelectData('blogs_category','WHERE perent_id=0');
                             while($row = $data->fetch_object()){?>  
                         <li class="nav-item">
-                            <a class="nav-link nav_menu text-capitalize text-white" href="post.php?category=<?=$row->category_name?>"><?=$row->category_name?></a>
+                            <a class="nav-link nav_menu text-capitalize " href="post.php?category=<?=$row->category_name?>"><?=$row->category_name?></a>
                         </li>
                         <?php } ?> 
                       </ul>
@@ -62,9 +62,6 @@
        </nav>
      </div>
 
-    <div class="bg-dark d-md-none d-sm-block">
-        <h6 class="text-white p-2"><?php if (isset($_GET['category'])) {echo $_GET['category'];}elseif (isset($_GET['sub_category'])) {echo $_GET['sub_category']; }else{echo 'All Post';}?></h6>
-    </div>
  	<!-- detail content -->
  	<div class="row mx-0 p-0 m-0" style="min-height: 800px; background:<?=settings('default_theam_color')?>">
  		 <!--short sidebar -->
@@ -155,7 +152,7 @@
                     <?php
                         $data = (!isset($_GET['category'])) ? SelectData('blog_news','LIMIT 12'): SelectData('blog_news',"WHERE parent_cat_id='$cat_id'  LIMIT 4");
                         while($row = $data->fetch_object()){?> 
-                        <div class="col-md-2 mb-4 d-flex align-items-stretch">                                   
+                        <div class="col-6 col-md-2 col-md-lg-2  d-flex align-items-stretch mb-4">                                   
                             <div class="post_card bg-light p-0 m-0 rounded-0 border-0 " >                                            
                                 <a class="nav-link p-0 m-0 " href="post_full.php?detail=<?=$row->page_url?>">                                                
                                 <img src="assets/blogs/<?=$row->featured_image?>" style="object-fit: cover; height: 100px;  width:100%">

@@ -10,13 +10,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
     <title>Best iP Law firm in Bangladesh - SUPREMEiP</title> 
+
+    <meta name="description" content="SUPREMEiP” is top-ranked Corporate &amp; ip law firm in Bangladesh with the international presence provides specialized services in Intellectual Property Rights, Corporate Affairs, Foreign Trade and Investment, Taxation, and Litigation." />
+    <meta name="keywords" content="bootstrap admin template, dashboard template, backend panel, bootstrap 4, backend template, dashboard template, saas admin, CRM dashboard, eCommerce dashboard">
+    <meta name="author" content="SUPREMEiP">
+    
+    <meta property="og:url"                content="<?=$sharelink?>" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="SUPREMEiP"/>
+    <meta property="og:description"        content="SUPREMEiP” is top-ranked Corporate &amp; ip law firm in Bangladesh with the international presence provides specialized services in Intellectual Property Rights, Corporate Affairs, Foreign Trade and Investment, Taxation, and Litigation."/>
+    <meta property="og:image"              content="assets/brand/<?=settings('logo')?>" />
+
+
+
     <link rel="icon" href="assets/brand/<?=settings('favicon')?>" sizes="32x32" />
     <link rel="icon" href="assets/brand/<?=settings('favicon')?>" sizes="192x192" />
     <link rel="apple-touch-icon" href="assets/brand/<?=settings('favicon')?>" />
+
+
+
+
+
+
+
+
+
+
+
     <link href="assets/dist/css/style.css" type="text/css" rel="stylesheet">
     <link rel='stylesheet' type='text/css' href='style.php' />
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.2/css/pro.min.css">  
@@ -26,13 +47,13 @@
   </head>
 
 <body id="supremeip">
-  <div class="container-fluid">
-  <div class="row">
+  <div class="">
+  <div class="row m-0 p-0">
     <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-md-block sidebar collapse" style="background:<?=header_menu('background_color');?>">
       <div class="position-sticky">        
         <div class="logo_text ms-3 mb-4 py-4">
             <div class="logoimg">        
-              <a href="index.php"><img src="assets/brand/<?=settings('logo')?>"></a>
+              <a href="index.php"><img src="assets/brand/<?=settings('logo')?>" alt="SUPREMEiP"></a>
             </div>      
 
             <?php $topbardata = SelectData('topbar','');
@@ -111,23 +132,26 @@
 
     <!-- mobile menu -->
     <div class="d-sm-block d-md-none">
-      <nav class="navbar navbar-expand-lg navbar-light ">
+      <nav class="navbar main_header_mobile navbar-expand-lg navbar-light fixed-top bg-light">
         <div class="container-fluid  mb-2">
-
             <div class="d-flex">
-              <a class="logoimg" href="index.php"><img src="assets/brand/logo.png"></a>
+              <a class="" href="index.php"><img src="assets/brand/<?=settings('logo')?>" width="60%" alt="SUPREMEiP"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             </div>
 
-            <div class="collapse main_header navbar-collapse"  id="navbarNav2">
+            <div class="collapse  navbar-collapse "  id="navbarNav2">
                 <ul class="navbar-nav mt-3">
+                  <li class="nav-item">
+                    <a class="nav-link nav_menu text-capitalize text-dark fw-bold " href="index.php">Home</a>
+                  </li>
                    <?php 
                       $data = SelectData('pages',"WHERE page_parent_id='0' AND page_status='1'");
                       while($row = $data->fetch_object()){?> 
                     <li class="nav-item">
-                      <a class="nav-link nav_menu text-capitalize text-dark fw-bold "  href="page.php?page=<?=$row->page_url?>"><?=$row->manu_title?></a>
+                      <a class="nav-link nav_menu text-capitalize text-dark fw-bold "  href="page.php?page=<?=$row->page_url?>">
+                      <i class="<?=$row->menu_icon?>" style="display: inline-block!important;transform: rotate(0deg); color:#000;"></i> <?=$row->manu_title?></a>
                     </li>
                    <?php }?>
                    <li class="nav-item">
@@ -147,6 +171,8 @@
     <a href="https://wa.me/<?=settings('whatsapp')?>" class="text-success glow_btn "><i class="fab fa-whatsapp p-2 fs-1"></i></a>
   </div> 
  </div>
+
+ <div class="mobile-margin" ></div>
 
 
 

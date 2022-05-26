@@ -74,8 +74,8 @@
 </style>
 
 <!-- main content -->
-<main class="col-md-10 ms-md-auto col-lg-10 px-md-0"  style="overflow: hidden;">  
-<div class="row mx-0">
+<main class="col-md-10 ms-md-auto col-lg-10 px-md-0 mx-0"  style="overflow: hidden;">  
+<div class="row m-0">
 
   <!-- section-1 -->
   <div class="col-lg-4 col-md-6 m-0 p-0 mb-lg-0">    

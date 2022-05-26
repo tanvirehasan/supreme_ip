@@ -5,7 +5,7 @@ if (isset($_POST['new_color_add'])) {
  
   $colorname = $_POST['color_name'];
   $color_code = $_POST['color_code'];
-  $insert = "INSERT INTO color_settings (color_name,color_code) VALUES ('$colorname','$color_code')";
+  $insert = "INSERT INTO color_settings (color_name, color_code) VALUES ('$colorname','$color_code')";
   if (mysqli_query($conn, $insert)==TRUE) {   
   }
 }
@@ -165,6 +165,7 @@ if (isset($_POST['Set_Default_img_color'])) {
   $default_theam_color=$_POST["default_theam_color"];
   $Overlay_color=$_POST["Overlay_color"];
   $Overlay_color2=$_POST["Overlay_color2"];
+  $shadow_color=$_POST["shadow_color"];
 
   if ($_FILES["default_img"]["name"]!='') {  
 
@@ -193,7 +194,7 @@ if (isset($_POST['Set_Default_img_color'])) {
 
  
  // Update query
-     $sql=" UPDATE settings SET default_img='$default_img', default_img2='$default_img2', Overlay_color='$Overlay_color', Overlay_color2='$Overlay_color2', default_theam_color='$default_theam_color' ";
+     $sql=" UPDATE settings SET default_img='$default_img', default_img2='$default_img2', Overlay_color='$Overlay_color', Overlay_color2='$Overlay_color2', default_theam_color='$default_theam_color', shadow_color='$shadow_color' ";
      if(mysqli_query($conn, $sql)){
        $msg = "Logo Update Successfully !";
        $bg = "alert alert-success";
