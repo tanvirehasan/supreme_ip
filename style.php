@@ -70,7 +70,7 @@
   left: 0;
   overflow: visible;
   z-index: 100; /* Behind the navbar */
-  box-shadow: 0px 0px 10px <?=settings('shadow_color')?>;
+  box-shadow: 0px 0px <?=settings('shadow_color_number')?>px <?=settings('shadow_color')?>;
 }
 
 
@@ -113,10 +113,8 @@
 
 
 .header_img{
-  box-shadow: 0px 0px 10px <?=settings('shadow_color')?>;
+  box-shadow: 0px 0px  <?=settings('shadow_color_number')?>px <?=settings('shadow_color')?>;
 }
-
-
 
 
 .header_img h1{

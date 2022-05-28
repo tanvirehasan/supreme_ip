@@ -20,7 +20,7 @@ if (isset($_GET['page'])) {
 
 <!-- main content -->
  <main class="col-md-10 ms-sm-auto col-lg-10  m-0 p-0">
- 	<div class="header_img bg-dark">
+ 	<div class="header_img">
  		<div class="row mx-0 m-0 p-0">
  			<div class="col-9  m-0 p-0" style="background-image: url('assets/mediacenter/<?php             
              if ($pageinfo->bgimag_off_on==1) {
@@ -31,7 +31,7 @@ if (isset($_GET['page'])) {
              }else{echo '';}            
              ?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
  				<h1 class="text-white h2 pe-5"><?=$page->page_title?>
- 				<div class="overlay" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('Overlay_color'):  $pageinfo->header_overlay_color;?>; opacity: 0.7;"></div>
+ 				<div class="overlay" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('Overlay_color'):  $pageinfo->header_overlay_color;?>; opacity:<?=settings('Overlay_color_opasity')?>;"></div>
             </h1>   
                               
  			</div>
@@ -48,7 +48,7 @@ if (isset($_GET['page'])) {
                      ?>"style="height:200px;"> 
 
  				</div>
- 				<div class="overlay2" style="background:<?=settings('Overlay_color2')?>; opacity: 0.5;"></div>
+ 				<div class="overlay2" style="background:<?=settings('Overlay_color2')?>; opacity:<?=settings('Overlay_color2_opasity')?>;"></div>
 
                 <!-- breadcrumb -->
                     <nav aria-label="" class="breadcrumb_menu header_icon">
@@ -90,7 +90,7 @@ if (isset($_GET['page'])) {
  	<!-- detail content --> 
  	<div class="row mx-0" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('default_theam_color'):  $pageinfo->bg_color;?>;">
  		 <!--short sidebar -->
- 		<div class="col-md-3 col-lg-2 pt-4 p-3 m-0 h-100 side-menu">
+ 		<div class="col-md-2 col-lg-2 pt-4 p-3 m-0 h-100 side-menu">
             <ul class="nav flex-column main_header">
                 <li class="nav-item">                
                   <a class="nav-link nav_menu <?php if ($baseurl=='page.php?page='.$pageurl) { echo "active_menu";} ?>
@@ -112,7 +112,7 @@ if (isset($_GET['page'])) {
             </ul>	
  		</div>
 
-        <div class="col-12 col-md-9 col-lg-8 pb-5  <?=($pageinfo->Section_gap_off_on==0) ? "bg-white" : '' ;?>">                 
+        <div class="col-12 col-md-9 col-lg-8 pb-5 pt-4  <?=($pageinfo->Section_gap_off_on==0) ? "bg-white" : '' ;?>">                 
             <nav class="mb-3 d-md-none d-lg-none ">
                 <ol class="nav" style="cursor: pointer;">
                     <li class="nav-link p-2 "><a href="https://www.facebook.com/sharer/sharer.php?u=<?=$sharelink?>"><i class="fab fa-facebook-square fs-3 text-muted"></i></a> </li>
@@ -289,7 +289,7 @@ if (isset($_GET['page'])) {
             <?php } ?>               
         </div> 
         
-        <div class="col-lg-2 d-md-none d-lg-block bg-white pt-3 "> 
+        <div class="col-lg-2 d-md-none d-lg-block bg-white pt-4"> 
             <div class="lawyer">
                 <?php 
                     if ($pageinfo->contact_parson!=0) {

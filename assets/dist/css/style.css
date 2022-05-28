@@ -408,6 +408,8 @@ letter-spacing: 0px;
 
 .page_content{
   text-align: justify;
+  padding: 30px;
+  padding-top: 0px;
 }
 
 
@@ -806,12 +808,6 @@ transform: rotate(30deg);
   background:#2d642d;
   overflow: hidden;
   border-bottom-right-radius:10px ;
-}
-
-.page_content{
-
-  padding: 30px;
-
 }
 
 

@@ -161,11 +161,13 @@ if (isset($_POST['sub_menu_update'])) {
 //Set_Default_img_color
 if (isset($_POST['Set_Default_img_color'])) {
 
-
-  $default_theam_color=$_POST["default_theam_color"];
-  $Overlay_color=$_POST["Overlay_color"];
-  $Overlay_color2=$_POST["Overlay_color2"];
-  $shadow_color=$_POST["shadow_color"];
+  $default_theam_color    =$_POST["default_theam_color"];
+  $Overlay_color          =$_POST["Overlay_color"];
+  $Overlay_color_opasity  =$_POST["Overlay_color_opasity"];
+  $Overlay_color2         = $_POST["Overlay_color2"];
+  $Overlay_color2_opasity =$_POST["Overlay_color2_opasity"];
+  $shadow_color           =$_POST["shadow_color"];
+  $shadow_color_number    =$_POST["shadow_color_number"];
 
   if ($_FILES["default_img"]["name"]!='') {  
 
@@ -174,10 +176,7 @@ if (isset($_POST['Set_Default_img_color'])) {
         $target_file = $target_dir . basename($_FILES["default_img"]["name"]);
         move_uploaded_file($_FILES["default_img"]["tmp_name"], $target_file);
 
-  }else{
-    $default_img=$_POST["default_img2"];
-  }
-
+  }else{$default_img=$_POST["default_img2"];}
 
     if ($_FILES["default_img2"]["name"]!='') {  
 
@@ -186,15 +185,19 @@ if (isset($_POST['Set_Default_img_color'])) {
         $target_file = $target_dir . basename($_FILES["default_img2"]["name"]);
         move_uploaded_file($_FILES["default_img2"]["tmp_name"], $target_file);
 
-  }else{
-    $default_img2=$_POST["default_img3"];
-  }
+  }else{ $default_img2=$_POST["default_img3"];}
 
-
-
- 
- // Update query
-     $sql=" UPDATE settings SET default_img='$default_img', default_img2='$default_img2', Overlay_color='$Overlay_color', Overlay_color2='$Overlay_color2', default_theam_color='$default_theam_color', shadow_color='$shadow_color' ";
+     $sql=" UPDATE settings SET 
+     
+    default_img='$default_img',
+    default_img2='$default_img2',
+    Overlay_color='$Overlay_color',
+    Overlay_color2='$Overlay_color2',
+    default_theam_color='$default_theam_color',
+    Overlay_color_opasity='$Overlay_color_opasity', 
+    Overlay_color2_opasity='$Overlay_color2_opasity', 
+    shadow_color='$shadow_color', 
+    shadow_color_number='$shadow_color_number'";
      if(mysqli_query($conn, $sql)){
        $msg = "Logo Update Successfully !";
        $bg = "alert alert-success";
@@ -202,6 +205,8 @@ if (isset($_POST['Set_Default_img_color'])) {
        echo "error";
      }
 }
+
+
 
 
 //Set_Default_img_color

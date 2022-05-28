@@ -48,9 +48,14 @@ function pagename($cat_col, $id){
     	$none = "None";
     	return $none;
     }
+}
 
-
-
+function rowcount($TableName,$moresql){        
+    global $conn;
+	$sql = "SELECT * FROM $TableName $moresql";
+	$select = mysqli_query($conn, $sql);
+    $row_count = mysqli_num_rows($select);
+	return $row_count;
 }
 
 

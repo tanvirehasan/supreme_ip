@@ -302,6 +302,7 @@ $row = $data->fetch_object();
                                 <option value="<?=$textcolor->color_code?>" ><?=$textcolor->color_name?></option>
                             <?php } ?>
                         </select>
+                        <input type="text" value="<?=$row->Overlay_color_opasity?>" name="Overlay_color_opasity" class="form-control" placeholder="10%">
                     </div>
 
                     <div class="col-md-2">  
@@ -312,9 +313,10 @@ $row = $data->fetch_object();
                         <?php 
                                 $data = SelectData('color_settings','');
                                 while ($textcolor = $data->fetch_object()) {?>
-                                <option value="<?=$textcolor->color_code?>" ><?=$textcolor->color_code?></option>
+                                <option value="<?=$textcolor->color_code?>" ><?=$textcolor->color_name?></option>
                             <?php } ?>
                         </select>
+                        <input type="text" value="<?=$row->Overlay_color2_opasity?>" name="Overlay_color2_opasity" class="form-control" placeholder="10%">
                     </div>
 
 
@@ -343,6 +345,7 @@ $row = $data->fetch_object();
                                 <option value="<?=$textcolor->color_code?>" ><?=$textcolor->color_name?></option>
                             <?php } ?>
                         </select>
+                        <input type="text" value="<?=$row->shadow_color_number?>" name="shadow_color_number" class="form-control" placeholder="10%">
                     </div>
                     
 
@@ -709,7 +712,7 @@ $row = $data->fetch_object();
 <div class="row">
         <div class="col-12 globalbtn"><h3 class="bg-white p-3 text-uppercase text-primary"><i class="fas fa-cog"></i> Global Color Setting</h3></div>
 
-        <div class="col-md-4 global">
+        <div class="col-md-6 global">
                         <!-- social link -->
             <div class="card p-3">                             
                     <label for="categoryname" class="h4 pt-2" style="font-weight:700;" id="show_form">Theme Color + </label>
@@ -741,7 +744,7 @@ $row = $data->fetch_object();
         </div>
 
 
-        <div class="col-md-4 global">
+        <div class="col-md-6 global">
             <!-- Font Color Settings -->
             <div class="card p-3">                             
                     <label for="categoryname" class="h4 pt-2" style="font-weight:700;">Font Color Settings </label>
@@ -785,39 +788,7 @@ $row = $data->fetch_object();
 
 
 
-            <div class="col-md-4 global">
-            <!-- Link Color Settings -->
-            <div class="card p-3">                             
-                    <label for="categoryname" class="h4 pt-2" style="font-weight:700;">Link Color</label>
-                    <table style="width:100%">
-                <?php 
-                    $data3 = SelectData('text_color_settings','');
-                    if ($data3->num_rows>0) {
-                    while ($social = $data3->fetch_object()) {?>
-                    <form method="POST" action="" enctype="multipart/form-data">
-                        <tr>
-                            <td><input type="text" class="form-control" value="<?=$social->text_name?>" name="text_name"   style="border:0"></td>
-
-                            <td>
-                            <select name="color_code" id="">
-                                <?php 
-                                    $data = SelectData('color_settings','');
-                                    while ($textcolor = $data->fetch_object()) {?>
-                                    <option value="<?=$textcolor->color_code?>" ><?=$textcolor->color_name?></option>
-                                <?php } ?>
-                            </select>
-                            </td>
-
-                           <td><input type="color" class="form-control" value="<?=$social->color_code?>" style="width: 50px; height:50px; border:0"> </td>
-                            <input type="hidden" name="tcid" value="<?=$social->tcid?>">
-                            <td class="ml-5"><button type="submit" class="btn" name="textcolorupdate"><i class="fas fa-check"></i> </button> </td>
-                        </tr>
-                    </form>                        
-                <?php } } ?>
-                    </table>                               
-            </div> 
-        </div>
-
+            
 
 </div>
 
