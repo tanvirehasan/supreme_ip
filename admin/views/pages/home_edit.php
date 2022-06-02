@@ -30,26 +30,31 @@
                                 <label for="categoryname"  class=" form-label" style="font-weight:700;">Page Name</label>
                                 <input type="text" class="form-control mb-4 " value="<?=$row->title?>" name="title">
 
-                                <label for="icon" class=" form-label" style="font-weight:700;">Text</label>
-                                <textarea name="content" class="form-control mb-3"><?=$row->content?></textarea>
-
                                 <label for="icon" class=" form-label" style="font-weight:700;">Link/url</label>
                                 <input name="link" class="form-control" value="<?=$row->link?>">
-                            
+
+                                <label for="icon" class=" form-label" style="font-weight:700;">Text</label>
+                                <textarea name="content" id="summernote" class="form-control mb-3"><?=$row->content?></textarea>
+                          
+                           
                                 <h6 class="h6 mt-3">Image & Overlay Color</h6>
 
                                 <div class="row">
                                     <div class="col-md-4">                                    
-                                        <img src="../assets/mediacenter/<?=$row->image?>" style='width:100%; height:150px;'>
+                                        <img src="../assets/mediacenter/<?=$row->image?>" style='width:100%; height:50px;'>
                                         <input type="file" class="form-control " value="<?=$row->image?>" name="image">
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="color" class="form-control m-0 p-0 " value="<?=$row->bg_color?>" name="bg_color"  style='width:100%; height:150px;'>
+                                        <input type="color" class="form-control m-0 p-0 " value="<?=$row->bg_color?>" name="bg_color"  style='width:100%; height:50px;'>
                                         <select name="bg_color" class="form-control">
-                                            <option value="<?=$row->bg_color?>" >Select</option>
+                                            <option value="<?=$row->bg_color?>" ><?=color_name($row->bg_color)?></option>
                                             <?=select_color()?>
                                         </select>
                                     </div>
+                                    <div class="col-md-4">  
+                                        <input type="text" value="0.9" class="text-control" placeholder="Opasity">
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -67,3 +72,18 @@
     </div>
 
 <?php } ?>
+
+
+  <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+
+        jQuery('#summernote').summernote({
+              height: 100,                
+              minHeight: null,          
+              maxHeight: null,             
+              focus: false                
+        });
+
+  </script>

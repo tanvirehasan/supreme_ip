@@ -22,20 +22,22 @@ if (isset($_GET['page'])) {
  <main class="col-md-10 ms-sm-auto col-lg-10  m-0 p-0">
  	<div class="header_img">
  		<div class="row mx-0 m-0 p-0">
- 			<div class="col-9  m-0 p-0" style="background-image: url('assets/mediacenter/<?php             
-             if ($pageinfo->bgimag_off_on==1) {
-                if ($pageinfo->global_color==1) {
-                    echo settings('default_img');
-                }else{echo $pageinfo->header_bg_img;
-                }              
-             }else{echo '';}            
-             ?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
- 				<h1 class="text-white h2 pe-5"><?=$page->page_title?>
- 				<div class="overlay" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('Overlay_color'):  $pageinfo->header_overlay_color;?>; opacity:<?=settings('Overlay_color_opasity')?>;"></div>
-            </h1>   
-                              
+
+ 			<div class="col-9  m-0 p-0" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('Overlay_color'):  $pageinfo->header_overlay_color;?>;">			
+              
+             <img src="assets/mediacenter/<?php             
+                    if ($pageinfo->bgimag_off_on==1) {
+                        if ($pageinfo->global_color==1) {
+                            echo settings('default_img');
+                        }else{echo $pageinfo->header_bg_img;
+                        }              
+                    }else{echo '';}       
+                 ?>" alt="" style="height: 200px; position: absolute; opacity:<?=settings('Overlay_color_opasity')?>">
+                <h1 class="text-white h2 pe-5 " style="position: absolute;"><?=$page->page_title?></h1>                     
  			</div>
- 			<div class="col-3 m-0 p-0 position-relative">
+
+
+ 			<div class="col-3 m-0 p-0 position-relative"  style="background:<?=settings('Overlay_color2')?>;">                
  				<div class="d-flex flex-column">
  					<img src="assets/mediacenter/<?php
                     if ($pageinfo->bgimag_off_on==1) {
@@ -45,10 +47,10 @@ if (isset($_GET['page'])) {
                         }              
                     }else{echo '';}                                         
                                           
-                     ?>"style="height:200px;"> 
+                     ?>"style="height:200px; opacity:<?=settings('Overlay_color2_opasity') ?>;"> 
 
  				</div>
- 				<div class="overlay2" style="background:<?=settings('Overlay_color2')?>; opacity:<?=settings('Overlay_color2_opasity')?>;"></div>
+               
 
                 <!-- breadcrumb -->
                     <nav aria-label="" class="breadcrumb_menu header_icon">

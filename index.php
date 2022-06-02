@@ -11,6 +11,7 @@
         background-repeat: no-repeat;
         background-position: center;
         overflow: hidden;
+        
     }
 
     .page_titletext{
@@ -29,7 +30,7 @@
 
     .page2overlay{
         height:284px;
-        width:45%;
+        width:50%;
         overflow: hidden;
     }
 
@@ -81,41 +82,44 @@
   <div class="col-lg-4 col-md-6 m-0 p-0 mb-lg-0">    
     <div class="row mx-0">
 
-        <!--section-1.1-->        
-        <div class="col-12 m-0 p-0" >            
+        <!--section-1.1-->      
+        
+        <div class="col-12 m-0 p-0" >    
+        
             <div class="page-content page1" style="background-image:url(assets/mediacenter/<?=HomePage('image', '1')?>);">
                 <div class="page1overlay" style="background:<?=HomePage('bg_color', '1')?>; opacity: 0.8;">
-                    <h2 class="page_titletext text-center p-5"><a class="home-link" href="<?=HomePage('link', '1')?>"><?=HomePage('content', '1')?> </a>
-                    <br><a href="<?=HomePage('link', '1')?>" class="readmore">Read More</a>                    
-
-                 </h2> 
-                </div>    
-            </div>            
+                    <a class="home-link" href="<?=HomePage('link', '1')?>">
+                    <div class="p-5"><?=HomePage('content', '1')?></div> 
+                    </a>
+                </div>
+            </div>  
+            
         </div>
+        
        
 
         <!--section-1.2--> 
         <div class="col-12 m-0 p-0">
             <div class="page-content page2" style="background-image:url(assets/mediacenter/<?=HomePage('image', '2')?>);">   
-                <div class="page2overlay" style="background:<?=HomePage('bg_color', '2')?>;opacity: 0.6;">
-                    <h5 class="page_titletext p-3 pt-5 ">
-                        <a class="home-link" href="<?=HomePage('link', '2')?>">
-                            <?=HomePage('content', '2')?>
-                        </a>
-                    </h5>
-                </div>               
+                <div class="page2overlay float-end" style="background:<?=HomePage('bg_color', '2')?>;opacity: 0.6;">
+                 <a class="home-link" href="<?=HomePage('link', '2')?>">
+                    <div class="p-4" ><?=HomePage('content', '2')?></div> 
+                 </a>
+                </div>      
+            </div>
+        </div>
+    
+        <!--section-1.3--> 
+        <div class="col-12 m-0 p-0">
+            <div class="page-content page2" style="background-image:url(assets/mediacenter/<?=HomePage('image', '3')?>);">   
+                <div class="page2overlay" style="background:<?=HomePage('bg_color', '3')?>;opacity: 0.6;"> 
+                 <a class="home-link" href="<?=HomePage('link', '3')?>">
+                    <div class="p-4" style="opacity: 1; z-index:999; "><?=HomePage('content', '3')?></div>  
+                 </a>                 
+                </div>                 
             </div>
         </div>
 
-        
-        
-        <!--section-1.3--> 
-        <a class="home-link" href="<?=HomePage('link', '3')?>">
-        <div class="col-12 m-0 p-0">
-            <div class="page-content page3" style="background-image:url(assets/mediacenter/<?=HomePage('image', '3')?>)">                
-            </div>
-        </div>
-        </a>
     </div>   
   </div>
 
@@ -125,45 +129,43 @@
     <div class="row mx-0">       
 
         <!--section-2.1--> 
-        <a class="home-link" href="<?=HomePage('link', '4')?>">
         <div class="col-12 m-0 p-0">
-            <div class="page-content page2" style="background-image:url(assets/mediacenter/<?=HomePage('image', '4')?>);">   
+            <div class="page-content page2" style="background-image:url(assets/mediacenter/<?=HomePage('image', '4')?>);">  
                 <div class="page2overlay" style="background:<?=HomePage('bg_color', '4')?>;opacity: 0.6;">
-                    <h5 class="page_titletext p-3 pt-5 ">
-                        <a class="home-link" href="<?=HomePage('link', '2')?>">
-                            <?=HomePage('content', '4')?>
-                        </a>
-                    </h5>
-                </div>               
+                    <a class="home-link" href="<?=HomePage('link', '4')?>">
+                        <div class="p-4" ><?=HomePage('content', '4')?></div> 
+                    </a>
+                </div>                             
             </div>
         </div>
-        </a>
+
 
 
         <!--section-2.2--> 
-        <a class="home-link" href="<?=HomePage('link', '5')?>">
         <div class="col-12 m-0 p-0">
-          <div class="page-content page3" style="background-image:url(assets/mediacenter/<?=HomePage('image', '5')?>)">                
+            <div class="page-content page2" style="background-image:url(assets/mediacenter/<?=HomePage('image', '5')?>);">  
+                <div class="page2overlay float-end" style="background:<?=HomePage('bg_color', '5')?>;opacity: 0.6;">
+                    <a class="home-link" href="<?=HomePage('link', '5')?>">
+                        <div class="p-4" ><?=HomePage('content', '5')?></div> 
+                    </a>
+                </div>                             
             </div>
         </div>
-        </a>
 
 
          <!--section-2.3-->        
-        <div class="col-12 m-0 p-0">
-            <div class="page-content page1" style="background-image:url(assets/mediacenter/<?=HomePage('image', '6')?>);">  
-                <div class="page1overlay" style="background:<?=HomePage('bg_color', '6')?>;opacity: 0.8;">
-                    <h2 class="page_titletext text-center p-5"> 
-                        <a class="home-link" href="<?=HomePage('link', '6')?>"> <?=HomePage('content', '6')?></a>
-                         <br><a href="<?=HomePage('link', '6')?>" class="readmore">Read More</a>
-                    </h2>                    
-                </div>                                              
-            </div>
+        <div class="col-12 m-0 p-0" >            
+            <div class="page-content page1" style="background-image:url(assets/mediacenter/<?=HomePage('image', '6')?>);">
+                <div class="page1overlay" style="background:<?=HomePage('bg_color', '6')?>; opacity: 0.8;">
+                    <a class="home-link" href="<?=HomePage('link', '1')?>">
+                    <div class="p-5"><?=HomePage('content', '6')?></div> 
+                    </a>
+                </div>    
+            </div>            
         </div>
-        </a>
+
     </div>   
   </div>
-
 
 
   <!-- section-3 -->
@@ -171,27 +173,23 @@
     <div class="row mx-0">
 
         <!--section-3.1-->         
-        <div class="col-12 m-0 p-0">
-            <div class="page-content page1" style="background-image:url(assets/mediacenter/<?=HomePage('image', '7')?>);">  
+        <div class="col-12 m-0 p-0" >            
+            <div class="page-content page1" style="background-image:url(assets/mediacenter/<?=HomePage('image', '7')?>);">
                 <div class="page1overlay" style="background:<?=HomePage('bg_color', '7')?>; opacity: 0.8;">
-                    <h2 class="page_titletext text-center p-5">
-                        <a class="home-link" href="<?=HomePage('link', '7')?>">
-                            <?=HomePage('content', '7')?>
-                            <br><a href="<?=HomePage('link', '7')?>" class="readmore">Read More</a>
-                         </a>
-                    </h2>                    
-                </div>                                              
-            </div>
+                    <a class="home-link" href="<?=HomePage('link', '1')?>">
+                    <div class="p-5"><?=HomePage('content', '7')?></div> 
+                    </a>
+                </div>    
+            </div>            
         </div>
         
-
         <!--section-3.2--> 
         <a class="home-link" href="<?=HomePage('link', '8')?>">
         <div class="col-12 m-0 p-0">
             <div class="page-content page2" style="background-image:url(assets/mediacenter/<?=HomePage('image', '8')?>);">   
                 <div class="page2overlay" style="background:<?=HomePage('bg_color', '8')?>;opacity: 0.6;">
                     <h5 class="page_titletext p-3 pt-5 ">
-                        <a class="home-link" href="<?=HomePage('link', '2')?>">
+                        <a class="home-link" href="<?=HomePage('link', '8')?>">
                             <?=HomePage('content', '8')?>
                         </a>
                     </h5>
@@ -200,14 +198,19 @@
         </div>
         </a>
 
-
         <!--section-3.3--> 
-        <a class="home-link" href="<?=HomePage('link', '9')?>">
         <div class="col-12 m-0 p-0">
-            <div class="page-content page3" style="background-image:url(assets/mediacenter/<?=HomePage('image', '9')?>)">                
+            <div class="page-content page2" style="background-image:url(assets/mediacenter/<?=HomePage('image', '9')?>);">  
+                <div class="page2overlay float-end" style="background:<?=HomePage('bg_color', '9')?>;opacity: 0.6;">
+                    <a class="home-link" href="<?=HomePage('link', '9')?>">
+                        <div class="p-4" ><?=HomePage('content', '9')?></div> 
+                    </a>
+                </div>                             
             </div>
         </div>
-        </a>
+
+
+
     </div>   
   </div>
 

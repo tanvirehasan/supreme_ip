@@ -15,25 +15,26 @@
         if ($_FILES["image"]["name"]!='') {
 
             $target_dir = "../assets/mediacenter/";
-            $image    = $_FILES["image"]["name"];            
+            $image    = $_FILES["image"]["name"];           
 
- 
-                $fileName = basename($_FILES["image"]["name"]); 
-                $imageTemp = $_FILES["image"]["tmp_name"];
-                $imageUploadPath = $target_dir . $fileName; 
-                $compressedImage = compressImage($imageTemp, $imageUploadPath, 40);
+            $fileName = basename($_FILES["image"]["name"]); 
+            $imageTemp = $_FILES["image"]["tmp_name"];
+            $imageUploadPath = $target_dir . $fileName; 
+            $compressedImage = compressImage($imageTemp, $imageUploadPath, 40);
 
+        }else{ $image= $_POST['imagevalue'];}
 
-
-        }else{ $image    = $_POST['imagevalue'];}
-
-        $update = "UPDATE home_page  SET title='$title', content='$content', link='$link', bg_color='$bg_color', image='$image' WHERE id='$id'";
+        $update = "UPDATE home_page  SET 
+                    title='$title',
+                    content='$content',
+                    link='$link',
+                    bg_color='$bg_color',
+                    image='$image' WHERE id='$id'";
         if ($conn->query($update)) {}else{echo "Sorry";}
-
     }
-
-
 ?>
+
+
 
 <div class="layout-content">
      <div class="container-fluid flex-grow-1 container-p-y"> 
@@ -71,7 +72,7 @@
                                  <tr>
                                     <td><?=$i++?></td>
                                     <td><?=$home->title?></td>
-                                    <td><?=$home->content?></td>
+                                    <td><?=strip_tags($home->content)?></td>
                                     <td><img src="../assets/mediacenter/<?=$home->image?>" style=" width: 50px; height:50px;" ></td>
                                     <td>
                                         <div style="background:<?=$home->bg_color?>; width: 50px; height:50px;"></div>
@@ -94,7 +95,7 @@
                                  <tr>
                                     <td><?=$i++?></td>
                                     <td><?=$home->title?></td>
-                                    <td><?=$home->content?></td>
+                                    <td><?=strip_tags($home->content)?></td>
                                     <td><img src="../assets/mediacenter/<?=$home->image?>" style=" width: 50px; height:50px;" ></td>
                                     <td>
                                         <div style="background:<?=$home->bg_color?>; width: 50px; height:50px;"></div>
@@ -119,7 +120,7 @@
                                  <tr >
                                     <td><?=$i++?></td>
                                     <td><?=$home->title?></td>
-                                    <td><?=$home->content?></td>
+                                    <td><?=strip_tags($home->content)?></td>
                                     <td><img src="../assets/mediacenter/<?=$home->image?>" style=" width: 50px; height:50px;" ></td>
                                     <td>
                                         <div style="background:<?=$home->bg_color?>; width: 50px; height:50px;"></div>
