@@ -66,7 +66,7 @@
                 <tr>
                     <td style="width: 80%;" >
                         <h3 style="padding-top: 5px; padding-buttom:5px;  font-family:'arial','bangla-regular';" ><?=$price->price_title?></h3>
-                        <p style="padding:0px 0px; font-family:'arial','bangla-regular';"> <?=strip_tags(html_entity_decode($price->Price_Description))?></p>
+                        <p style="padding:0px 0px; font-family:'arial','bangla-regular';">  <?=html_entity_decode($price->Price_Description)?></p>
                     </td>
                     <td><h3 style="font-family: bangla-regular, arial" ><?=$price->Priceamount?></h3></td>
                 </tr>                 

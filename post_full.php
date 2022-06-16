@@ -174,7 +174,7 @@
     <div class="header_img bg-dark ">
         <div class="row mx-0 m-0 p-0">
             <div class="col-9  m-0 p-0" style="background-image: url('assets/mediacenter/<?=settings('default_img')?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
-                <h1 class="text-white h2"><?=postcate('category_name',"$postdata->cat_title")?></h1> 
+                <h1 class="text-white h2"   <?=($cat_name=='Blog(BN)') ? "style='font-family: bangla-azad !important;'" : '' ;?>  ><?=$postdata->post_title?></h1> 
               <div class="overlay" style="background:<?=settings('Overlay_color')?>; opacity: 0.7;"></div>
             </div>
             <div class="col-3 m-0 p-0 position-relative">
@@ -224,9 +224,9 @@
 
     <div class="bg-dark  d-md-none d-sm-block"><h6 class="text-white p-2">NEWS</h6></div>
  	<!-- detail content -->
- 	<div class="row mx-0 bg-dark p-0 m-0" style="min-height: 800px; background:<?=settings('default_theam_color')?>">
+ 	<div class="row mx-0 p-0 m-0" style="min-height: 800px; background:<?=settings('default_theam_color')?>">
  		 <!--short sidebar -->
- 		<div class="col-2 p-0 h-50  side-menu ">
+ 		<div class="col-2 p-0 pt-4 h-50  side-menu ">
             <ul class="nav flex-column main_header">   
                 <li class="nav-item">
                     <a class="nav-link nav_menu <?php if ($baseurl=='post.php') { echo "active_menu";}?>" href="post.php">

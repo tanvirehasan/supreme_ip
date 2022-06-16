@@ -98,8 +98,8 @@
 }
 
 
-.active_menu{
-  color: <?=sub_menu('active_color')?> !important;
+.side-menu .active_menu{
+  color:<?=sub_menu('active_color')?> !important;
   font-weight: bold !important;
   font-size: <?=2+sub_menu('font_size');?>px !important;
 }
@@ -188,6 +188,12 @@
   transition: 0.5s;
   cursor: pointer;
 }
+
+
+#ylh:hover{
+ cursor: default !important;
+}
+
 
 
 .section_title_page{

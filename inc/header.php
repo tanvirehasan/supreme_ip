@@ -11,33 +11,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Best iP Law firm in Bangladesh - SUPREMEiP</title> 
-
     <meta name="description" content="SUPREMEiP” is top-ranked Corporate &amp; ip law firm in Bangladesh with the international presence provides specialized services in Intellectual Property Rights, Corporate Affairs, Foreign Trade and Investment, Taxation, and Litigation." />
     <meta name="keywords" content="bootstrap admin template, dashboard template, backend panel, bootstrap 4, backend template, dashboard template, saas admin, CRM dashboard, eCommerce dashboard">
     <meta name="author" content="SUPREMEiP">
-    
     <meta property="og:url"                content="<?=$sharelink?>" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="SUPREMEiP"/>
     <meta property="og:description"        content="SUPREMEiP” is top-ranked Corporate &amp; ip law firm in Bangladesh with the international presence provides specialized services in Intellectual Property Rights, Corporate Affairs, Foreign Trade and Investment, Taxation, and Litigation."/>
     <meta property="og:image"              content="assets/brand/<?=settings('logo')?>" />
-
-
-
     <link rel="icon" href="assets/brand/<?=settings('favicon')?>" sizes="32x32" />
     <link rel="icon" href="assets/brand/<?=settings('favicon')?>" sizes="192x192" />
     <link rel="apple-touch-icon" href="assets/brand/<?=settings('favicon')?>" />
-
-
-
-
-
-
-
-
-
-
-
+    
     <link href="assets/dist/css/style.css" type="text/css" rel="stylesheet">
     <link rel='stylesheet' type='text/css' href='style.php' />
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.2/css/pro.min.css">  
@@ -67,7 +52,7 @@
 
         <ul class="navbar-nav ms-3 header_menu">
           <li class="nav-item m-0 p-0 ">
-            <a class="nav-link nav_menus m-0 p-0 <?php if (basename($_SERVER['REQUEST_URI'])=='index.php') { echo "active_menu"; } ?>" href="index.php">           
+            <a class="nav-link nav_menus m-0 p-0 <?php if (basename($_SERVER['REQUEST_URI'])=='index.php') { echo "active"; } ?>" href="index.php">           
             <i class="fas fa-home" style="display: inline-block!important;transform: rotate(0deg);"></i> Home<a>
           </li>
           <?php 

@@ -52,7 +52,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">  
-                                        <input type="text" value="0.9" class="text-control" placeholder="Opasity">
+                                        <!--<input type="text" value="0.9" class="text-control" placeholder="Opasity">-->
                                     </div>
 
                                 </div>

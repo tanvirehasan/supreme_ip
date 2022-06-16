@@ -674,6 +674,39 @@ $row = $data->fetch_object();
                 </form> 
             </div> 
             
+                        <!-- Contact us  -->
+
+            <?php 
+                $cdata = SelectData('contactlawer','');
+                $crow = $cdata->fetch_object();              
+            ?>
+
+            <div class="card p-3" style="background:<?= $crow->bg_color?>;">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <label for="categoryname" class=" form-label" style="font-weight:700;">Contact Us</label>
+                    <input type="text" name="heading" class="form-control my-3" value="<?=$crow->heading?>">
+                    <textarea id="contactus"  name="text" class="form-control editor"><?= $crow->text?></textarea>
+                    <input type="hidden" name="imge_up2" value="<?=$crow->imge?>" >
+                    <div class="imagecolor">
+                        <div class="img">
+                            <img src="../assets/mediacenter/<?=$crow->imge?>" class="my-3" alt="" width="100px">
+                             <input type="file" name="imge_up" class="form-control my-3" >
+                        </div>
+                    </div>
+                    <select name="bg_color" class="form-control ">
+                        <option value="<?= $crow->bg_color?>" ><?= color_name($crow->bg_color)?></option>
+                        <?php select_color();?>
+                    </select>
+                    <div class=" m-0 my-3">
+                        <button type="submit" name="countactupdate" class="btn btn-primary"> Update</button>
+                    </div> 
+                </form> 
+            </div> 
+            
+            
+            
+            
+            
             
 
         </div>
@@ -692,6 +725,23 @@ $row = $data->fetch_object();
                     </div> 
                 </form> 
             </div> 
+            
+            <!-- home_hover -->
+            <div class="card p-3">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <label for="categoryname" class=" form-label" style="font-weight:700;">Home Hover</label>
+                    <input type="color" style="width: 100%;" height="20px" value="<?=settings('home_hover');?>">
+                    <select name="home_hover" class="form-control">
+                        <option value="<?=settings('home_hover');?>" ><?=color_name(settings('home_hover'))?></option>
+                        <?php select_color(); ?>
+                    </select>
+                    <div class=" m-0 my-3">
+                        <button type="submit" name="hove_homebtn" class="btn btn-primary"> Update</button>
+                    </div> 
+                </form> 
+            </div> 
+            
+            
            
             <!-- whatsapp -->
             <div class="card p-3">

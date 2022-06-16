@@ -2,11 +2,8 @@
     session_start();
     include "db.php";
     include "function.php";
-
-    $sharelink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    $baseurl=basename($_SERVER['REQUEST_URI']);
    
-    if (!isset($_SESSION['user'])) {
+      if (!isset($_SESSION['user'])) {
         header('location:login.php');
     }
 ?>
@@ -172,16 +169,14 @@
                             <li class="sidenav-item"><a href="../database-backup.php" class="sidenav-link"><div>Backup</div></a></li>                                         
                         </ul>
                     </li>
-
-                    <!-- Management-->
+                    
+                           <!-- Management-->
                     <li class="sidenav-item">
                         <a href="file_management.php" class="sidenav-link ">
                             <i class="sidenav-icon fas fa-copy"></i>
                             <div>File Management</div>
                         </a>                                               
                     </li>
-
-                    
 
 
         </ul>

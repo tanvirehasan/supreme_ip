@@ -82,6 +82,7 @@ function color_code_to_name($color_id, $color_name){
 
 
 
+
 //reconect
 function Reconect($url){
 	echo "<script> location.replace('".$url."')</script>";
@@ -93,6 +94,29 @@ function If_Not_Login($url){
 	if (!isset($_SESSION['user'])) {
 		Reconect($url);
 	}
+}
+
+// Delivery Status
+function Delivery_Status($status){
+
+	if ($status==0) {		
+		$order_status = "<span class='text-dark'>Pending</span>";
+	}else if($status==1){
+		$order_status = "<span class='text-dark'>Processing";
+	}else if($status==2){
+		$order_status = "<span class='text-dark'>Pickup";
+	}else if($status==3){
+		$order_status = "<span class='text-dark'>On The Way";
+	}else if($status==4){
+		$order_status = "<span class='text-dark'>Delivered</span>";
+	}else if($status==5){
+		$order_status = "<span class='text-dark'>Return";
+	}else if($status==6){
+		$order_status = "<span class='text-dark'>Cancel";
+	}
+
+	return $order_status;
+
 }
 
 
@@ -138,6 +162,14 @@ function Section_Design($data){
     $row = mysqli_fetch_array(SelectData('section_design',""));
     return $row[$data];
 }
+
+
+
+
+
+
+
+
 
 
 

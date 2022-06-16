@@ -58,6 +58,17 @@
               maxHeight: null,             
               focus: false                
         });
+        
+        $(document).ready(function() {
+            $('#contactus').summernote();
+        });
+
+        jQuery('#contactus').summernote({
+              height: 200,                
+              minHeight: null,          
+              maxHeight: null,             
+              focus: false                
+        });
 
   </script>
 

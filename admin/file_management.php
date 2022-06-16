@@ -141,7 +141,7 @@ if (isset($_POST['file_update'])) {
                                         <td><?=$file->file_name?></td>
                                         <td>
                                             
-                                        <input class="border-0" type="text" value="<?='http://localhost/supreme_ip/file.php?file='.$file->file_url?>" id="myInput_<?php echo $file->file_url?>">
+                                        <input class="border-0" type="text" value="<?='http://test.supremeip.com/file.php?file='.$file->file_url?>" id="myInput_<?php echo $file->file_url?>">
                                         <button class="btn" onclick="myFunction<?php echo $file->file_url?>()"><i class="far fa-clipboard"></i></button>
 
                                     </td>

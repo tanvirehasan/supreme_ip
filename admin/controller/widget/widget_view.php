@@ -259,7 +259,7 @@
                 </div>                  
             </div>
             <div class="card-body">               
-                <?=$redrow->ditails?>                          
+                <?=html_entity_decode($redrow->ditails)?>                          
             </div>
         </div>
     </div>

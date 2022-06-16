@@ -41,15 +41,17 @@
         padding: 0;
     }
 
-    .home-link:hover{
-        opacity: 0.5;
-    }
-
 
     .page-content  h2{
         text-shadow: 2px 2px #000;
         font-family: MochiyPopOne;
     }
+
+
+    .page-content a:hover{
+        color: <?=settings('home_hover')?>!important;
+    }
+
 
     .page-content a{
         color: #fff;

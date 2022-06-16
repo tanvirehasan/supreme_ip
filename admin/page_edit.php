@@ -234,7 +234,8 @@
                                     <span class="">BG color</span> 
                                     <div style='height:50px;width:100%; border:none; padding:0; background:<?php echo ($row->bg_color=='') ? settings('default_theam_color') : $row->bg_color;?>'></div>
                                     <select name="bg_color" id="" class="form-control">
-                                            <option value="<?php echo ($row->bg_color=='') ? settings('default_theam_color') : $row->bg_color;?>" >Select</option>
+                                            <?php $bgcolor= ($row->bg_color=='') ? settings('default_theam_color') : $row->bg_color;?>
+                                            <option value="<?php echo $bgcolor;?>" ><?php echo color_name($bgcolor); ?></option>
                                             
                                         <?php 
                                             $data = SelectData('color_settings','');
@@ -262,7 +263,8 @@
                                     <span class="">Overlay color</span>  
                                     <div style='height:50px;width:100%; border:none; padding:0; background:<?php echo ($row->header_overlay_color=='') ? settings('Overlay_color') : $row->header_overlay_color; ?>'></div>
                                      <select name="header_overlay_color" id="" class="form-control">
-                                        <option value="<?php echo ($row->header_overlay_color=='') ? settings('Overlay_color') : $row->header_overlay_color; ?>" >Select</option>
+                                         <?php $overlaybgcolor= ($row->header_overlay_color=='') ? settings('Overlay_color') : $row->header_overlay_color; ?>
+                                        <option value="<?=$overlaybgcolor?>" ><?php echo color_name($overlaybgcolor)?></option>
                                             
                                         <?php 
                                             $data = SelectData('color_settings','');

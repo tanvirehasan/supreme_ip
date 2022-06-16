@@ -21,11 +21,10 @@ if (isset($_GET['page'])) {
 <!-- main content -->
  <main class="col-md-10 ms-sm-auto col-lg-10  m-0 p-0">
  	<div class="header_img">
- 		<div class="row mx-0 m-0 p-0">
+ 		<div class="row m-0 p-0 g-0">
 
- 			<div class="col-9  m-0 p-0" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('Overlay_color'):  $pageinfo->header_overlay_color;?>;">			
-              
-             <img src="assets/mediacenter/<?php             
+ 			<div class="col-9  m-0 p-0" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('Overlay_color'):  $pageinfo->header_overlay_color;?>;">	
+ 			             <img src="assets/mediacenter/<?php             
                     if ($pageinfo->bgimag_off_on==1) {
                         if ($pageinfo->global_color==1) {
                             echo settings('default_img');
@@ -33,12 +32,15 @@ if (isset($_GET['page'])) {
                         }              
                     }else{echo '';}       
                  ?>" alt="" style="height: 200px; position: absolute; opacity:<?=settings('Overlay_color_opasity')?>">
-                <h1 class="text-white h2 pe-5 " style="position: absolute;"><?=$page->page_title?></h1>                     
+                 
+                <h1 class="text-white h2 pe-5 " style="position: absolute; width: 70%; "><?=$pageinfo->page_title?></h1>  
+              
+                   
  			</div>
 
 
  			<div class="col-3 m-0 p-0 position-relative"  style="background:<?=settings('Overlay_color2')?>;">                
- 				<div class="d-flex flex-column">
+ 				<div class="d-flex flex-column g-0">
  					<img src="assets/mediacenter/<?php
                     if ($pageinfo->bgimag_off_on==1) {
                         if ($pageinfo->global_color==1) {
@@ -95,8 +97,7 @@ if (isset($_GET['page'])) {
  		<div class="col-md-2 col-lg-2 pt-4 p-3 m-0 h-100 side-menu">
             <ul class="nav flex-column main_header">
                 <li class="nav-item">                
-                  <a class="nav-link nav_menu <?php if ($baseurl=='page.php?page='.$pageurl) { echo "active_menu";} ?>
-                  "  href="page.php?page=<?=$pageurl?>"><i class="<?=$page->menu_icon?>" style="display: inline-block!important;transform: rotate(0deg);"></i> <?=$page->manu_title;?>
+                  <a class="nav-link nav_menu <?php if ($baseurl=='page.php?page='.$pageurl) { echo "active_menu";} ?>"  href="page.php?page=<?=$pageurl?>"><i class="<?=$page->menu_icon?>" style="display: inline-block!important;transform: rotate(0deg);"></i> <?=$page->manu_title;?>
                     <?php if ($baseurl=='page.php?page='.$pageurl) { echo "<i class='fas fa-location-arrow' style='display: inline-block!important;transform: rotate(45deg);'></i>";} ?>                                                   
                   </a>
                 </li>
@@ -105,8 +106,7 @@ if (isset($_GET['page'])) {
                     while($row = $data->fetch_object()){?>
                 <li class="nav-item">
                     <a class="nav-link nav_menu 
-                        <?php if ($baseurl=='page.php?page='.$pageurl.'&child='.$row->page_url) { echo "active_menu";} ?>                    
-                        " href="page.php?page=<?=$pageurl?>&child=<?=$row->page_url;?>"><i class="<?=$row->menu_icon?>" style="display: inline-block!important;transform: rotate(0deg);"></i> <?=$row->manu_title;?>
+                        <?php if ($baseurl=='page.php?page='.$pageurl.'&child='.$row->page_url) { echo "active_menu";} ?>" href="page.php?page=<?=$pageurl?>&child=<?=$row->page_url;?>"><i class="<?=$row->menu_icon?>" style="display: inline-block!important;transform: rotate(0deg);"></i> <?=$row->manu_title;?>
                         <?php if ($baseurl=='page.php?page='.$pageurl.'&child='.$row->page_url) {  echo "<i class='fas fa-location-arrow' style='display: inline-block!important;transform: rotate(45deg);'></i>";} ?>                                                   
                    </a>
                 </li>
@@ -126,7 +126,7 @@ if (isset($_GET['page'])) {
             </nav>
 
                             
-        <div class="page_content" ><?=html_entity_decode($pageinfo->page_content)?></div> 
+        <div class="page_content p-3" ><?=html_entity_decode($pageinfo->page_content)?></div> 
         <?php 
         $price_data = SelectData('prices', "WHERE price_page_id={$pageinfo->page_id} ORDER BY serial_list ASC");
         if ($price_data->num_rows>0) {?>                      
@@ -293,29 +293,22 @@ if (isset($_GET['page'])) {
         
         <div class="col-lg-2 d-md-none d-lg-block bg-white pt-4"> 
             <div class="lawyer">
-                <?php 
-                    if ($pageinfo->contact_parson!=0) {
-                        $teag_data = SelectData('our_team', "WHERE team_id='$pageinfo->contact_parson'");
-                        $contentinfo = $teag_data->fetch_object();?>      
+                 <?php                              
+                    $cdata = SelectData('contactlawer','');
+                    $crow = $cdata->fetch_object();?>    
 
                         <h6 class="row section_title m-0" id="ylhbtn">
-                            <div class="col-11 p-0"><i class="fas fa-user-graduate pe-2"></i><?=settings('Your_Lawyer_text');?></div>
+                            <div class="col-11 p-0"><i class="fas fa-user-graduate pe-2"></i><?=$crow->heading;?></div>
                             <div class="col-1 p-0 text-end"><i class="fal fa-angle-down"></i></div> </h6> 
 
-                                <div class="team-card" id="ylh" >    
-                                    <div class="team_icon">
-                                        <a href="tel:<?=$contentinfo->Phone_No?>"><i class="fas fa-phone-alt"></i></a> 
-                                        <a href="mailto:<?=$contentinfo->Email?>"><i class="fas fa-envelope"></i></a>
-                                    </div>                                      
-                                    <div class="profile_pic"> <a href="team.php?team=<?=str_replace(' ', '-', $contentinfo->Name)?>"><img src="assets/mediacenter/team/<?=$contentinfo->Profile_pic?>" alt="" > </a></div>                                            
-                                    <div class="team_info">
-                                        <b><?=$contentinfo->Name?></b>
-                                        <p ><?=$contentinfo->Designation?></p> 
+                                <div class="team-card" id="ylh" style="background:<?= $crow->bg_color?>;display: none;">   
+                                    <div class="profile_pic"><img src="assets/mediacenter/<?=$crow->imge;?>" alt="" > </a></div>                                            
+                                    <div class="team_info" style="background:<?= $crow->bg_color?>;">
+                                        <?=$crow->text;?>
                                     </div>                                 
                                 </div> 
-                                
-                <?php } ?>
-
+                
+                
                 <?php //Read More. . . 
                 $red_data = SelectData('read_more', "WHERE page_id={$pageinfo->page_id}");
                 if ($red_data->num_rows>0) {

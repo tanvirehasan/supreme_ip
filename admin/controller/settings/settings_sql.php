@@ -1,11 +1,13 @@
 <?php
 
+
 //new color add
+
 if (isset($_POST['new_color_add'])) {
  
   $colorname = $_POST['color_name'];
   $color_code = $_POST['color_code'];
-  $insert = "INSERT INTO color_settings (color_name, color_code) VALUES ('$colorname','$color_code')";
+  $insert = "INSERT INTO color_settings (color_name,color_code) VALUES ('$colorname','$color_code')";
   if (mysqli_query($conn, $insert)==TRUE) {   
   }
 }
@@ -92,13 +94,13 @@ if (isset($_POST['faviconupdate'])) {
 if (isset($_POST['sidebarupdated'])) {
 
   $font_size        =$_POST["font_size"];
-  $line_height       =$_POST["line_height"];
+  $line_height      =$_POST["line_height"];
   $font_color       =$_POST["font_color"];
   $font_family      = htmlspecialchars($_POST["font_family"]);
   $background_color =$_POST["background_color"];
   $hover_color      =$_POST["hover_color"];
   $active_color     =$_POST["active_color"];
-  $text_transform     =$_POST["text_transform"];
+  $text_transform   =$_POST["text_transform"];
 
 
      $sql=" UPDATE header_menu SET     
@@ -129,7 +131,6 @@ if (isset($_POST['sub_menu_update'])) {
   $line_height       =$_POST["line_height"];
   $font_color       =$_POST["font_color"];
   $font_family      = htmlspecialchars($_POST["font_family"]);
-  $background_color =$_POST["background_color"];
   $hover_color      =$_POST["hover_color"];
   $active_color     =$_POST["active_color"];
   $text_transform     =$_POST["text_transform"];
@@ -140,13 +141,10 @@ if (isset($_POST['sub_menu_update'])) {
       line_height='$line_height',
       font_color='$font_color',
       font_family='$font_family',
-      background_color='$background_color',
       hover_color='$hover_color',
       active_color='$active_color',    
-      text_transform='$text_transform'    
-      
-      
-       ";
+      text_transform='$text_transform'";
+       
      if(mysqli_query($conn, $sql)){
        $msg = "favicon Update Successfully !";
        $bg = "alert alert-success";
@@ -209,7 +207,62 @@ if (isset($_POST['Set_Default_img_color'])) {
 
 
 
-//Set_Default_img_color
+//hover Home
+if (isset($_POST['hove_homebtn'])) {
+
+  $home_hover=$_POST["home_hover"];
+ 
+    // Update query
+     $sql=" UPDATE settings SET home_hover='$home_hover' ";
+     if(mysqli_query($conn, $sql)){
+       $msg = "Logo Update Successfully !";
+       $bg = "alert alert-success";
+     }else{
+       echo "error";
+     }
+}
+
+
+
+
+//contactlawer
+if (isset($_POST['countactupdate'])) {
+
+  $heading=$_POST["heading"];
+  $text=$_POST["text"];
+  $bg_color=$_POST["bg_color"];
+
+  if ($_FILES["imge_up"]["name"]!='') {     
+      $target_dir = "../assets/mediacenter/";
+      $target_file = $target_dir . basename($_FILES["imge_up"]["name"]);
+      $imge =$_FILES["imge_up"]["name"];
+      move_uploaded_file($_FILES["imge_up"]["tmp_name"], $target_file);
+
+  }else{
+    $imge =$_POST["imge_up2"];
+  }
+ 
+    // Update query
+     $sql=" UPDATE contactlawer SET heading='$heading', text='$text',  bg_color='$bg_color', imge='$imge'     
+      ";
+
+
+     if(mysqli_query($conn, $sql)){
+       
+       $msg = "Logo Update Successfully !";
+       $bg = "alert alert-success";
+     }else{
+       echo "Error: " . $sql . "<br>" . $conn->error;
+     }
+}
+
+
+
+
+
+
+
+//client_bg
 if (isset($_POST['client_bg'])) {
 
   $client_bg_defult=$_POST["client_bg_defult"];
@@ -281,13 +334,15 @@ if (isset($_POST['section_updated'])) {
   $text_bg_color      =$_POST["text_bg_color"];
  
 
+
      $sql=" UPDATE section_design SET     
       font_size='$font_size',
       font_color='$font_color',
       font_family='$font_family',
       background_color='$background_color',
       text_bg_color='$text_bg_color'
-         
+      
+      
        ";
      if(mysqli_query($conn, $sql)){
        $msg = "favicon Update Successfully !";
@@ -296,6 +351,7 @@ if (isset($_POST['section_updated'])) {
        echo "error";
      }
 }
+
 
 
 
@@ -328,6 +384,7 @@ $page_header_icon_color=$_POST["page_header_icon_color"];
 }
 
 
+
 //Your_Lawyer_update
 if (isset($_POST['Your_Lawyer_update'])) {
 
@@ -357,16 +414,6 @@ $Your_Lawyer_bg_color=$_POST["Your_Lawyer_bg_color"];
      }
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
