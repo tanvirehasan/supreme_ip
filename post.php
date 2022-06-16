@@ -41,11 +41,11 @@
     </div>
 
      <!-- mobile side menu -->
-     <div class="p-1  d-md-none d-sm-block my-3">        
-         <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+     <div class="d-md-none d-sm-block"  style="margin-top:25%; background:<?php echo settings('default_theam_color')?>";        
+         <nav class="navbar navbar-expand-lg ">
               <div class="container-fluid">               
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-bars fs-4 text-white"></i>
+                  <i class="fas fa-bars fs-4 "></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav align-items-end">
@@ -53,7 +53,7 @@
                             $data = SelectData('blogs_category','WHERE perent_id=0');
                             while($row = $data->fetch_object()){?>  
                         <li class="nav-item">
-                            <a class="nav-link nav_menu text-capitalize text-white" href="post.php?category=<?=$row->category_name?>"><?=$row->category_name?></a>
+                            <a class="nav-link nav_menu text-capitalize " href="post.php?category=<?=$row->category_name?>"><?=$row->category_name?></a>
                         </li>
                         <?php } ?> 
                       </ul>

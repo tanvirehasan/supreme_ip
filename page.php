@@ -71,7 +71,7 @@ if (isset($_GET['page'])) {
 
 
      <!-- mobile side menu -->
-     <div class="d-md-none d-sm-block mb-3">        
+     <div class="d-md-none d-sm-block" style="margin-top:20%;">        
          <nav class="navbar navbar-expand-lg navbar-light" style="background:<?php echo ( $pageinfo->global_color==1) ? settings('default_theam_color'):  $pageinfo->bg_color;?>;">
               <div class="">               
                 <button class="navbar-toggler m-3 border-0" style="color:<?=sub_menu('font_color')?> !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
