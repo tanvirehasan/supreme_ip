@@ -120,7 +120,7 @@
       <nav class="navbar main_header_mobile navbar-expand-lg navbar-light fixed-top bg-light">
         <div class="container-fluid  mb-2">
             <div class="d-flex">
-              <a class="" href="index.php"><img src="assets/brand/<?=settings('logo')?>" width="60%" alt="SUPREMEiP"></a>
+              <a class="" href="index.php"><img src="assets/brand/logo.png" width="60%" alt="SUPREMEiP"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>

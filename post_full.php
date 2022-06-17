@@ -43,13 +43,13 @@
   </head>
 
 <body id="supremeip">
-  <div class="container-fluid">
-  <div class="row">
+  <div class="">
+  <div class="row m-0 p-0">
     <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-md-block sidebar collapse" style="background:<?=header_menu('background_color');?>">
       <div class="position-sticky">        
         <div class="logo_text ms-3 mb-4 py-4">
             <div class="logoimg">        
-              <a href="index.php"><img src="assets/brand/<?=settings('logo')?>"></a>
+              <a href="index.php"><img src="assets/brand/<?=settings('logo')?>" alt="SUPREMEiP"></a>
             </div>      
 
             <?php $topbardata = SelectData('topbar','');
@@ -63,7 +63,7 @@
 
         <ul class="navbar-nav ms-3 header_menu">
           <li class="nav-item m-0 p-0 ">
-            <a class="nav-link nav_menus m-0 p-0 <?php if (basename($_SERVER['REQUEST_URI'])=='index.php') { echo "active_menu"; } ?>" href="index.php">           
+            <a class="nav-link nav_menus m-0 p-0 <?php if (basename($_SERVER['REQUEST_URI'])=='index.php') { echo "active"; } ?>" href="index.php">           
             <i class="fas fa-home" style="display: inline-block!important;transform: rotate(0deg);"></i> Home<a>
           </li>
           <?php 
@@ -128,23 +128,26 @@
 
     <!-- mobile menu -->
     <div class="d-sm-block d-md-none">
-      <nav class="navbar navbar-expand-lg navbar-light ">
+      <nav class="navbar main_header_mobile navbar-expand-lg navbar-light fixed-top bg-light">
         <div class="container-fluid  mb-2">
-
             <div class="d-flex">
-              <a class="logoimg" href="index.php"><img src="assets/brand/logo.png"></a>
+              <a class="" href="index.php"><img src="assets/brand/logo.png" width="60%" alt="SUPREMEiP"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             </div>
 
-            <div class="collapse main_header navbar-collapse"  id="navbarNav2">
+            <div class="collapse  navbar-collapse "  id="navbarNav2">
                 <ul class="navbar-nav mt-3">
+                  <li class="nav-item">
+                    <a class="nav-link nav_menu text-capitalize text-dark fw-bold " href="index.php">Home</a>
+                  </li>
                    <?php 
                       $data = SelectData('pages',"WHERE page_parent_id='0' AND page_status='1'");
                       while($row = $data->fetch_object()){?> 
                     <li class="nav-item">
-                      <a class="nav-link nav_menu text-capitalize text-dark fw-bold "  href="page.php?page=<?=$row->page_url?>"><?=$row->manu_title?></a>
+                      <a class="nav-link nav_menu text-capitalize text-dark fw-bold "  href="page.php?page=<?=$row->page_url?>">
+                      <i class="<?=$row->menu_icon?>" style="display: inline-block!important;transform: rotate(0deg); color:#000;"></i> <?=$row->manu_title?></a>
                     </li>
                    <?php }?>
                    <li class="nav-item">
@@ -165,12 +168,15 @@
   </div> 
  </div>
 
+
+
+
 <!-------------- Header End ---------------->
 
 
 
 <!-- main content -->
- <main class="col-md-10 ms-sm-auto col-lg-10  px-md-0 " >
+ <main class="col-md-10 ms-sm-auto col-lg-10  px-md-0 px-0" >
     <div class="header_img bg-dark ">
         <div class="row mx-0 m-0 p-0">
             <div class="col-9  m-0 p-0" style="background-image: url('assets/mediacenter/<?=settings('default_img')?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
@@ -199,30 +205,25 @@
     </div>
 
      <!-- mobile side menu -->
-     <div class="p-1  d-md-none d-sm-block my-3">        
-         <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-              <div class="container-fluid">               
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-bars fs-4 text-white"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav align-items-end">
-                          <a class="nav-link nav_menu active_menu " href="post.php?">All Post</a>
-                        <?php 
-                            $data = SelectData('blogs_category','WHERE perent_id=0');
-                            while($row = $data->fetch_object()){?>  
-                        <li class="nav-item">
-                            <a class="nav-link nav_menu text-capitalize text-white" href="category.php?catname=<?=$row->category_name?>"><?=$row->category_name?></a>
-                        </li>
-                        <?php }?> 
-                      </ul>
-                </div>
-              </div>
+     <div class="d-md-none d-sm-block" style="margin-top:22%; background:<?php echo settings('default_theam_color')?>">        
+         <nav class="navbar navbar-expand-lg mb-3 px-3">        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-4 me-2"></i> 
+                <?php if (isset($_GET['category'])) {echo $_GET['category'];}elseif (isset($_GET['sub_category'])) {echo $_GET['sub_category']; }else{echo 'All Post';}?>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item"><a class="nav-link nav_menu text-capitalize " href="post.php">All post</a></li>
+                    <?php 
+                        $data = SelectData('blogs_category','WHERE perent_id=0');
+                        while($row = $data->fetch_object()){?>  
+                    <li class="nav-item"><a class="nav-link nav_menu text-capitalize " href="post.php?category=<?=$row->category_name?>"><?=$row->category_name?></a></li>
+                    <?php } ?> 
+                </ul>
+            </div>
        </nav>
      </div>
 
-
-    <div class="bg-dark  d-md-none d-sm-block"><h6 class="text-white p-2">NEWS</h6></div>
  	<!-- detail content -->
  	<div class="row mx-0 p-0 m-0" style="min-height: 800px; background:<?=settings('default_theam_color')?>">
  		 <!--short sidebar -->
@@ -259,7 +260,7 @@
               </div>
 
               <!-- Full Blog and Image -->
-              <div class="" style="text-align:justify">                            
+              <div>                            
                   <!-- <img src="assets/blogs/<?=$postdata->featured_image?>" alt="<?=$postdata->post_title?>" width="100%" class="py-2 mb-3">   -->
                   <h1 class="blog_title" <?=($cat_name=='Blog(BN)') ? "style='font-family: bangla-azad !important;'" : '' ;?>><?=$postdata->post_title?></h1>              
                   <div class="full_blog" <?=($cat_name=='Blog(BN)') ? "style='font-family: bangla-regular !important;font-size:20px;' " : '' ;?>> <?=html_entity_decode($postdata->blognews_content)?></div>
@@ -327,11 +328,22 @@
               </div> 
           </div>
 
-        
-
-    
-
-               
     </div>
- </main>         
- <?php include"inc/footer.php";?>
+ </main>      
+
+
+ <style>
+  
+@media only screen and (max-width: 600px) {
+    h1.blog_title{
+        font-size: 25px !important;
+    }
+}
+
+
+
+
+ </style>
+ 
+ 
+ <?php include "inc/footer.php";?>

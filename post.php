@@ -10,7 +10,7 @@
     }
 ?>
 <!-- main content -->
- <main class="col-md-9 ms-sm-auto col-lg-10  px-md-0" >
+ <main class="col-md-9 ms-sm-auto col-lg-10  px-md-0 px-0" >
     <div class="header_img bg-dark ">
         <div class="row mx-0 m-0 p-0">
             <div class="col-9  m-0 p-0"style="background-image: url('assets/mediacenter/<?=settings('default_img')?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
@@ -41,30 +41,24 @@
     </div>
 
      <!-- mobile side menu -->
-     <div class="d-md-none d-sm-block"  style="margin-top:25%; background:<?php echo settings('default_theam_color')?>";        
-         <nav class="navbar navbar-expand-lg ">
-              <div class="container-fluid">               
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-bars fs-4 "></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav align-items-end">
-                        <?php 
-                            $data = SelectData('blogs_category','WHERE perent_id=0');
-                            while($row = $data->fetch_object()){?>  
-                        <li class="nav-item">
-                            <a class="nav-link nav_menu text-capitalize " href="post.php?category=<?=$row->category_name?>"><?=$row->category_name?></a>
-                        </li>
-                        <?php } ?> 
-                      </ul>
-                </div>
-              </div>
+     <div class="d-md-none d-sm-block" style="margin-top:22%; background:<?php echo settings('default_theam_color')?>">        
+         <nav class="navbar navbar-expand-lg mb-3 px-3">        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-4 me-2"></i> 
+                <?php if (isset($_GET['category'])) {echo $_GET['category'];}elseif (isset($_GET['sub_category'])) {echo $_GET['sub_category']; }else{echo 'All Post';}?>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item"><a class="nav-link nav_menu text-capitalize " href="post.php">All post</a></li>
+                    <?php 
+                        $data = SelectData('blogs_category','WHERE perent_id=0');
+                        while($row = $data->fetch_object()){?>  
+                    <li class="nav-item"><a class="nav-link nav_menu text-capitalize " href="post.php?category=<?=$row->category_name?>"><?=$row->category_name?></a></li>
+                    <?php } ?> 
+                </ul>
+            </div>
        </nav>
      </div>
-
-    <div class="bg-dark d-md-none d-sm-block">
-        <h6 class="text-white p-2"><?php if (isset($_GET['category'])) {echo $_GET['category'];}elseif (isset($_GET['sub_category'])) {echo $_GET['sub_category']; }else{echo 'All Post';}?></h6>
-    </div>
  	<!-- detail content -->
  	<div class="row mx-0 p-0 m-0" style="min-height: 800px; background:<?=settings('default_theam_color')?>">
  		 <!--short sidebar -->
