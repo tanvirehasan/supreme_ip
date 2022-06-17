@@ -340,10 +340,8 @@
     }
 }
 
-
-
-
  </style>
- 
- 
+  
  <?php include "inc/footer.php";?>
+
+

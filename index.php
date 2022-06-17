@@ -353,12 +353,10 @@
         <a class="home-link" href="<?=HomePage('link', '8')?>">
         <div class="col-12 m-0 p-0">
             <div class="page-content page2" style="background-image:url(assets/mediacenter/<?=HomePage('image', '8')?>);">   
-                <div class="page2overlay" style="background:<?=HomePage('bg_color', '8')?>;opacity: 0.6;">
-                    <h5 class="page_titletext p-3 pt-5 ">
-                        <a class="home-link" href="<?=HomePage('link', '8')?>">
-                            <?=HomePage('content', '8')?>
-                        </a>
-                    </h5>
+                <div class="page2overlay" style="background:<?=HomePage('bg_color', '8')?>;opacity: 0.6;">                    
+                    <a class="home-link" href="<?=HomePage('link', '8')?>">
+                      <div class="p-5" > <?=HomePage('content', '8')?></div>
+                    </a>                    
                 </div>               
             </div>
         </div>
