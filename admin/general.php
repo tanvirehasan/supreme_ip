@@ -636,7 +636,7 @@ $row = $data->fetch_object();
                     </table> 
 
                 <form method="POST" action="" enctype="multipart/form-data">                
-                    <div id="add_slink" class="mt-3" style="display: none;">
+                    <div id="add_slink" class="mt-3">
                         <input type="text" class="form-control"  name="icon" placeholder="Icon">
                         <input type="text" class="form-control"  name="name" placeholder="Name"> 
                         <input type="text" class="form-control"  name="social_url" placeholder="Url"> 
