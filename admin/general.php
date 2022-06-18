@@ -701,17 +701,9 @@ $row = $data->fetch_object();
                         <button type="submit" name="countactupdate" class="btn btn-primary"> Update</button>
                     </div> 
                 </form> 
-            </div> 
-            
-            
-            
-            
-            
-            
+            </div>     
 
         </div>
-
-
         
 <!--------- Section -3 ---------->   
         <div class="col-md-4 setting">
