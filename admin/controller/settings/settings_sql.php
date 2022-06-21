@@ -259,9 +259,6 @@ if (isset($_POST['countactupdate'])) {
 
 
 
-
-
-
 //client_bg
 if (isset($_POST['client_bg'])) {
 
@@ -543,6 +540,37 @@ if (isset($_GET['social_delete'])) {
       echo "Hellosdklfjaslkd fklasdjfl kjasdlkfj aslkdjf l";
       Reconect('general.php');
 }
+
+
+
+//customurl 
+if (isset($_POST['customurl'])) {
+
+    $Request_Url=$_POST['Request_Url'];
+    $Forward_Url=$_POST['Forward_Url'];
+    $insrt = "INSERT INTO `custom_url`(`Request_Url`, `Forward_Url`) VALUES ('$Request_Url','$Forward_Url')";
+    $conn->query($insrt);
+}
+
+if (isset($_POST['urlupdate'])) {
+
+    $Request_Url=$_POST['Request_Url'];
+    $Forward_Url=$_POST['Forward_Url'];
+    $urlid=$_POST['urlid'];
+
+    $insrt = "UPDATE `custom_url` SET `Request_Url`='$Request_Url', `Forward_Url`='$Forward_Url' WHERE urlid='$urlid'";
+    $conn->query($insrt);
+}
+
+if (isset($_GET['url_delete'])) {
+      $delete = "DELETE FROM custom_url WHERE urlid={$_GET['url_delete']}";
+      $conn->query($delete);
+      echo "Hellosdklfjaslkd fklasdjfl kjasdlkfj aslkdjf l";
+      Reconect('general.php');
+}
+
+
+
 
 
 
