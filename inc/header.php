@@ -162,7 +162,7 @@
 <!-- quick contact -->
  <div class="quick_contact d-sm-block d-md-none">
   <div class="d-flex justify-content-end">
-    <a href="https://wa.me/<?=settings('whatsapp')?>" class="text-success glow_btn "><i class="fab fa-whatsapp p-2 fs-1"></i></a>
+    <a href="https://wa.me/<?=settings('whatsapp')?>" class="bg-success text-white rounded-circle"><i class="fab fa-whatsapp p-3 fs-1"></i></a>
   </div> 
  </div>
 

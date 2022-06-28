@@ -699,12 +699,10 @@ letter-spacing: 0px;
 }
 
 
-/*.glow_btn:hover{
-    border-style: solid;
-  border-width: 10px;
-  border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+.glow_btn:hover{
+  border-radius: 100%;
 }
-*/
+
 
 
 
@@ -798,7 +796,7 @@ transform: rotate(30deg);
   padding: 4px 8px;
   min-width:150px;
   position: absolute;
-  z-index: 1;
+  z-index:0;
   background:#2d642d;
   overflow: hidden;
   border-bottom-right-radius:10px ;

@@ -1,7 +1,5 @@
 <?php include "inc/header.php";?>
 
-
-<!-- main content -->
 <!-- main content -->
  <main class="col-md-10 ms-sm-auto col-lg-10  m-0 p-0">
  	<div class="header_img">
@@ -42,34 +40,15 @@
  	<!-- detail content --> 
  	<div class="row mx-0" style="background:<?php echo settings('default_theam_color')?>;">
  		 <!--short sidebar -->
- 		<div class="col-md-3 col-lg-2 pt-1 p-3 m-0 h-100 side-menu">
 
-         <?php 
-            $teag_data = SelectData('our_team', "WHERE team_id='1'");
-            $contentinfo = $teag_data->fetch_object();?>     
 
-                <div class="team-card text-start" id="ylh" >    
-                    <div class="team_icon">
-                        <a href="tel:<?=$contentinfo->Phone_No?>"><i class="fas fa-phone-alt"></i></a> 
-                        <a href="mailto:<?=$contentinfo->Email?>"><i class="fas fa-envelope"></i></a>
-                    </div>                                      
-                    <div class="profile_pic"><img src="assets/mediacenter/team/<?=$contentinfo->Profile_pic?>" alt="" > </div>                                            
-                    <div class="team_info">
-                        <b><?=$contentinfo->Name?></b>
-                        <p ><?=$contentinfo->Designation?></p> 
-                    </div>                                 
-                </div> 
-                <?php  ?>
-	
- 		</div>
-
-        <div class="col-12 col-md-10 col-lg-10 bg-white">                 
+        <div class="col-12 col-md-12 col-lg-12 bg-white">                 
                             
         <div class="page_content p-4" style=" min-height:800px;" >
         <div class="row bg-light p-0 ">
             <div class="col-md-4 p-0">
                 <div class="contact_icon">
-                    <h6 class="text-white p-1" ><i class="fas fa-map-marker-alt"></i> New Market</h6>
+                    <h6 class="text-white p-1" ><i class="fas fa-map-marker-alt"></i> Rampura</h6>
                 </div>
                 
                 <div class="contactinfo p-3 mt-5">
