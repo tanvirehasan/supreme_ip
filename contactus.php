@@ -2,29 +2,36 @@
 
 
 <!-- main content -->
+<!-- main content -->
  <main class="col-md-10 ms-sm-auto col-lg-10  m-0 p-0">
- 	<div class="header_img bg-dark">
- 		<div class="row mx-0 m-0 p-0">
- 			<div class="col-9  m-0 p-0" style="background-image: url('assets/mediacenter/<?=settings('default_img')?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
- 				<h1 class="text-white h2  pe-5">Contact Us
- 				<div class="overlay" style="background:<?php echo settings('Overlay_color')?>; opacity: 0.7;"></div>
-            </h1>   
-                              
+ 	<div class="header_img">
+ 		<div class="row m-0 p-0 g-0">
+
+ 			<div class="col-9  m-0 p-0" style="background:<?php echo settings('Overlay_color')?>;">	
+ 			             <img src="assets/mediacenter/<?php echo settings('default_img')  ?>" alt="" style="height: 200px; position: absolute; opacity:<?=settings('Overlay_color_opasity')?>">
+                 
+                <h1 class="text-white h2 pe-5 " style="position: absolute; width: 70%; ">Contact Us</h1>  
+              
+                   
  			</div>
- 			<div class="col-3 m-0 p-0 position-relative">
- 				<div class="d-flex flex-column">
- 					<img src="assets/mediacenter/<?=settings('default_img2')?>"style="height:200px;"> 					
+
+
+ 			<div class="col-3 m-0 p-0 position-relative"  style="background:<?=settings('Overlay_color2')?>;">                
+ 				<div class="d-flex flex-column g-0">
+ 					<img src="assets/mediacenter/<?php echo settings('default_img2') ?>"style="height:200px; opacity:<?=settings('Overlay_color2_opasity') ?>;"> 
+
  				</div>
- 				<div class="overlay2" style="background:<?=settings('Overlay_color2')?>; opacity: 0.5;"></div>
+               
 
                 <!-- breadcrumb -->
-                    <nav aria-label="" class="breadcrumb_menu">
+                    <nav aria-label="" class="breadcrumb_menu header_icon">
                         <ol class="nav" style="cursor: pointer;">
-                            <li class="nav-link p-1 "><a href="https://www.facebook.com/sharer/sharer.php?u=<?=$sharelink?>"><i class="fab fa-facebook-square fs-5 text-white"></i></a> </li>
-                            <li class="nav-link p-1 "><a href="https://twitter.com/intent/tweet?url=<?=$sharelink?>"><i class="fab fa-twitter-square fs-5 text-white"></i></a></li>
-                            <li class="nav-link p-1 "><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=$sharelink?>"><i class="fab fa-linkedin fs-5 text-white"></i></a></li>
-                            <li class="nav-link p-1 "><a href="https://api.whatsapp.com/send?text=<?=$sharelink?>"><i class="fab fa-whatsapp-square fs-5 text-white"></i></a></li>
-                            <li class="nav-link p-1 "><a href="mailto:info@example.com?&subject=&cc=&bcc=&body=<?=$sharelink?>"><i class="fas fa-envelope fs-5 text-white "></i></a></li>
+                            <li class="nav-link p-1 "><a href="https://www.facebook.com/sharer/sharer.php?u=<?=$sharelink?>"><i class="fab fa-facebook-square fs-5 "></i></a> </li>
+                            <li class="nav-link p-1 "><a href="https://twitter.com/intent/tweet?url=<?=$sharelink?>"><i class="fab fa-twitter-square fs-5 "></i></a></li>
+                            <li class="nav-link p-1 "><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=$sharelink?>"><i class="fab fa-linkedin fs-5 "></i></a></li>
+                            <li class="nav-link p-1 "><a href="https://api.whatsapp.com/send?text=<?=$sharelink?>"><i class="fab fa-whatsapp-square fs-5 "></i></a></li>
+                            <li class="nav-link p-1 "><a href="mailto:info@example.com?&subject=&cc=&bcc=&body=<?=$sharelink?>"><i class="fas fa-envelope fs-5 "></i></a></li>
+                            <li class="nav-link p-1 "><a href="print.php?id=<?= $pageinfo->page_id?>" target="null" > <i class="fas fa-print  fs-5"></i> </a> </li>
                         </ol>                     
                     </nav>                   
  			</div>

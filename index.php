@@ -92,6 +92,14 @@
               <a class="nav-link nav_menus m-0 p-0 py-1 <?php if (basename($_SERVER['REQUEST_URI'])=='post.php') { echo "active"; } ?> " href="post.php">
                <i class="fas fa-blog" style="display: inline-block!important;transform: rotate(0deg);"></i> blog & news<i class="fas fa-location-arrow"></i></a>
           </li>         
+
+          <li class="nav-item">
+              <a class="nav-link nav_menus m-0 p-0 py-1 <?php if (basename($_SERVER['REQUEST_URI'])=='contactus.php') { echo "active"; } ?> " href="contactus.php">
+               <i class="fal fa-headset" style="display: inline-block!important;transform: rotate(0deg);"></i> Contact Us<i class="fas fa-location-arrow"></i></a>
+          </li>
+
+
+
       </ul>
       </div>
 
@@ -141,6 +149,9 @@
                    <?php }?>
                    <li class="nav-item">
                       <a class="nav-link nav_menus  text-capitalize text-dark fw-bold" href="post.php">blog & news</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link nav_menus  text-capitalize text-dark fw-bold" href="contactus.php">Contact us</a>
                   </li>
                   
                 </ul>
