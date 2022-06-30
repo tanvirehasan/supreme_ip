@@ -146,10 +146,13 @@
                     </li>
                    <?php }?>
                    <li class="nav-item">
-                      <a class="nav-link nav_menus  text-capitalize text-dark fw-bold" href="post.php">blog & news</a>
+                      <a class="nav-link nav_menus  text-capitalize text-dark fw-bold" href="post.php">
+                        <i class="fas fa-blog" style="display: inline-block!important;transform: rotate(0deg); color:#000;"></i> blog & news</a>
                   </li>
                     <li class="nav-item">
-                      <a class="nav-link nav_menus  text-capitalize text-dark fw-bold" href="contactus.php">Contact us</a>
+                      <a class="nav-link nav_menus  text-capitalize text-dark fw-bold" href="contactus.php">
+                        <i class="fal fa-headset" style="display: inline-block!important;transform: rotate(0deg); color:#000;"></i>
+                        Contact us</a>
                   </li>
                   
                 </ul>
